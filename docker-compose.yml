@@ -4,6 +4,7 @@ services:
     build:
       context: .
     working_dir: /opt/rtems-llvm
+    privileged: true
     volumes:
       - .:/opt/rtems-llvm
       - llvm-build:/opt/rtems-llvm/src/rtems-rsb/rtems/build
