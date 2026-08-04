@@ -33,7 +33,7 @@ Use either Docker or Podman to start the containerized environment. All subseque
 **Using Docker:**
 
 ```bash
-docker compose -f docker-compose.yml -f docker-compose.podman.yml up -d
+docker compose -f docker-compose.yml -f docker-compose.docker.yml up -d
 docker compose exec dev /bin/bash
 
 ```
