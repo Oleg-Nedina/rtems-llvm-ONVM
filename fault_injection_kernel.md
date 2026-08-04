@@ -82,27 +82,33 @@ Execution is now paused at the entry of `_Timespec_Is_valid`. Inspect the disass
 You will see the RASM instrumentation: a signature loaded from the stack, updated per block, and compared against fixed values before branching to `SigMismatch_Handler`. For example:
 
 ```text
-   0x08007f48 <+36>:	str	r0, [sp, #20]
-   0x08007f4a <+38>:	bne.n	0x8007f6a <_Timespec_Is_valid+70>
-   0x08007f4c <+40>:	b.n	0x8007f4e <_Timespec_Is_valid+42>
-   ...
-   0x08007f54 <+48>:	cmp	r0, #2
-   0x08007f56 <+50>:	bne.w	0x800808e <_Timespec_Is_valid+362>
-   ...
-   0x08007f70 <+76>:	cmp	r0, #4
+   0x08004546 <+38>:    str     r0, [sp, #4]
+   0x08004548 <+40>:    bne.n   0x80045a4 <_Timespec_Is_valid+132>
+   0x0800454a <+42>:    ldr     r0, [r1, #4]
+   0x0800454c <+44>:    ldr     r2, [sp, #4]
+   0x0800454e <+46>:    cmp     r0, #0
+   0x08004550 <+48>:    mov.w   r0, #3
+   0x08004554 <+52>:    it      mi
+   0x08004556 <+54>:    movmi   r0, #5
+   0x08004558 <+56>:    add     r0, r2
+   0x0800455a <+58>:    str     r0, [sp, #4]
+   0x0800455c <+60>:    bmi.n   0x8004586 <_Timespec_Is_valid+102>
+   0x0800455e <+62>:    ldr     r0, [sp, #4]
+   0x08004560 <+64>:    subs    r0, #1
+   0x08004562 <+66>:    cmp     r0, #4
 ```
 
 Set a breakpoint just before a branch instruction, then continue to reach it:
 
 ```text
-(gdb) b *0x08007f4a
+(gdb) b *0x08004548
 (gdb) c
 ```
 
 Now inject the fault: force the program counter to jump to a different basic block, bypassing the legitimate path. This simulates a control-flow error (as would be caused by a bit-flip in the PC). Here we jump from `+38` directly to `+70`, skipping the block at `+42..+68`:
 
 ```text
-(gdb) set $pc = 0x08007f6a
+(gdb) set $pc = 0x08004590
 (gdb) c
 ```
 
