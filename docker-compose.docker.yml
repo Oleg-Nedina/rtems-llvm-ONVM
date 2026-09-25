@@ -4,3 +4,4 @@ services:
     group_add:
       - dialout
       - plugdev
+

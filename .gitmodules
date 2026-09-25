@@ -1,12 +1,12 @@
 [submodule "src/rtems"]
 	path = src/rtems
-	url = git@github.com:Oleg-Nedina/rtems.git
+	url = https://github.com/Oleg-Nedina/rtems.git
 	branch = main
 [submodule "src/rtems-rsb"]
 	path = src/rtems-rsb
 	url = https://github.com/FlavioMiglio/rtems-rsb
 [submodule "ASPIS"]
 	path = ASPIS
-	url = git@github.com:Oleg-Nedina/ASPIS_ON_VM.git
+	url = https://github.com/Oleg-Nedina/ASPIS_ON_VM.git
 [submodule "rtems"]
 	branch = main

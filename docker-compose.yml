@@ -1,6 +1,8 @@
 # docker-compose.yml
 services:
   dev:
+    container_name: rtems-llvm-dev
+    image: rtems-llvm-latest
     build:
       context: .
     working_dir: /opt/rtems-llvm
@@ -12,8 +14,8 @@ services:
     command: sleep infinity
     stdin_open: true
     tty: true
-    devices:
-      - "/dev/ttyUSB0:/dev/ttyUSB0:rw"
+    #   devices:
+    #     - "/dev/ttyUSB0:/dev/ttyUSB0:rw"
     security_opt:
       - label=disable
       - apparmor=unconfined
