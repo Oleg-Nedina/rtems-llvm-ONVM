@@ -3,3 +3,6 @@
 build.log
 rtems-clang-wrapper.conf
 rtems/*
+# Fault Injection FI_Pipeline Environment
+tools/fi_pipeline/fi_env/
+tools/fi_pipeline/__pycache__/
