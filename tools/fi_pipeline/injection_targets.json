@@ -1,0 +1,3181 @@
+{
+    "functions": [
+        {
+            "name": "_Console_simple_Write",
+            "address": "0x80008d1",
+            "size": 40
+        },
+        {
+            "name": "check_access",
+            "address": "0x8000df5",
+            "size": 216
+        },
+        {
+            "name": "IMFS_dir_read",
+            "address": "0x8001979",
+            "size": 246
+        },
+        {
+            "name": "IMFS_stat_directory",
+            "address": "0x8001a71",
+            "size": 84
+        },
+        {
+            "name": "IMFS_eval_is_directory",
+            "address": "0x8001add",
+            "size": 24
+        },
+        {
+            "name": "IMFS_eval_token",
+            "address": "0x8001af5",
+            "size": 308
+        },
+        {
+            "name": "IMFS_node_initialize_device",
+            "address": "0x8001c49",
+            "size": 14
+        },
+        {
+            "name": "IMFS_stat_device",
+            "address": "0x8001c59",
+            "size": 22
+        },
+        {
+            "name": "IMFS_node_initialize_enosys",
+            "address": "0x8001cc5",
+            "size": 28
+        },
+        {
+            "name": "IMFS_node_initialize_hard_link",
+            "address": "0x8001d59",
+            "size": 8
+        },
+        {
+            "name": "IMFS_node_remove_hard_link",
+            "address": "0x8001d61",
+            "size": 74
+        },
+        {
+            "name": "IMFS_stat_hard_link",
+            "address": "0x8001dad",
+            "size": 52
+        },
+        {
+            "name": "IMFS_memfile_extend",
+            "address": "0x80020a1",
+            "size": 676
+        },
+        {
+            "name": "IMFS_memfile_get_block_pointer",
+            "address": "0x8002345",
+            "size": 442
+        },
+        {
+            "name": "IMFS_memfile_destroy",
+            "address": "0x8002531",
+            "size": 696
+        },
+        {
+            "name": "memfile_read",
+            "address": "0x80027e9",
+            "size": 696
+        },
+        {
+            "name": "memfile_write",
+            "address": "0x8002aa1",
+            "size": 62
+        },
+        {
+            "name": "memfile_ftruncate",
+            "address": "0x8002ae1",
+            "size": 60
+        },
+        {
+            "name": "IMFS_renamed_destroy",
+            "address": "0x8002d7d",
+            "size": 28
+        },
+        {
+            "name": "IMFS_node_initialize_sym_link",
+            "address": "0x8002f99",
+            "size": 18
+        },
+        {
+            "name": "IMFS_stat_sym_link",
+            "address": "0x8002fad",
+            "size": 36
+        },
+        {
+            "name": "_RTEMS_tasks_Allocate_and_prepare_stack",
+            "address": "0x80034e1",
+            "size": 110
+        },
+        {
+            "name": "_User_extensions_Fatal",
+            "address": "0x8003cdd",
+            "size": 56
+        },
+        {
+            "name": "_Timecounter_Windup",
+            "address": "0x8004041",
+            "size": 760
+        },
+        {
+            "name": "dummy_get_timecount",
+            "address": "0x8004365",
+            "size": 8
+        },
+        {
+            "name": "_User_extensions_Thread_begin",
+            "address": "0x8005441",
+            "size": 50
+        },
+        {
+            "name": "_User_extensions_Thread_exitted",
+            "address": "0x8005475",
+            "size": 50
+        },
+        {
+            "name": "_Thread_queue_Priority_priority_actions",
+            "address": "0x800586d",
+            "size": 346
+        },
+        {
+            "name": "_Thread_queue_Priority_enqueue",
+            "address": "0x80059c9",
+            "size": 460
+        },
+        {
+            "name": "_Thread_queue_Priority_extract",
+            "address": "0x8005b95",
+            "size": 130
+        },
+        {
+            "name": "_Thread_queue_Priority_surrender",
+            "address": "0x8005c19",
+            "size": 146
+        },
+        {
+            "name": "_Thread_queue_Priority_first",
+            "address": "0x8005cad",
+            "size": 46
+        },
+        {
+            "name": "_Thread_queue_Priority_inherit_priority_actions",
+            "address": "0x8005cdd",
+            "size": 442
+        },
+        {
+            "name": "_Thread_queue_Priority_inherit_enqueue",
+            "address": "0x8005e99",
+            "size": 634
+        },
+        {
+            "name": "_Thread_queue_Priority_inherit_extract",
+            "address": "0x8006115",
+            "size": 282
+        },
+        {
+            "name": "_Thread_queue_Priority_inherit_surrender",
+            "address": "0x8006231",
+            "size": 844
+        },
+        {
+            "name": "_Thread_Life_action_handler",
+            "address": "0x80068e9",
+            "size": 202
+        },
+        {
+            "name": "_Thread_Join_flush_filter",
+            "address": "0x8006b49",
+            "size": 40
+        },
+        {
+            "name": "_Thread_Change_life_locked",
+            "address": "0x8006631",
+            "size": 206
+        },
+        {
+            "name": "_Thread_Make_zombie",
+            "address": "0x8006701",
+            "size": 190
+        },
+        {
+            "name": "_User_extensions_Destroy_iterators",
+            "address": "0x8006a69",
+            "size": 224
+        },
+        {
+            "name": "_Thread_Wait_for_join",
+            "address": "0x80069b5",
+            "size": 178
+        },
+        {
+            "name": "_ARMV7M_Thread_dispatch",
+            "address": "0x8008095",
+            "size": 8
+        },
+        {
+            "name": "null_handler_open",
+            "address": "0x800811d",
+            "size": 10
+        },
+        {
+            "name": "null_handler_fstat",
+            "address": "0x8008129",
+            "size": 10
+        },
+        {
+            "name": "null_op_lock_or_unlock",
+            "address": "0x8008159",
+            "size": 6
+        },
+        {
+            "name": "null_op_link",
+            "address": "0x8008161",
+            "size": 10
+        },
+        {
+            "name": "null_op_mknod",
+            "address": "0x800816d",
+            "size": 10
+        },
+        {
+            "name": "null_op_rmnod",
+            "address": "0x8008179",
+            "size": 10
+        },
+        {
+            "name": "null_op_fchmod",
+            "address": "0x8008185",
+            "size": 10
+        },
+        {
+            "name": "null_op_chown",
+            "address": "0x8008191",
+            "size": 10
+        },
+        {
+            "name": "null_op_clonenode",
+            "address": "0x800819d",
+            "size": 10
+        },
+        {
+            "name": "null_op_mount",
+            "address": "0x80081a9",
+            "size": 10
+        },
+        {
+            "name": "null_op_unmount",
+            "address": "0x80081b5",
+            "size": 10
+        },
+        {
+            "name": "null_op_fsunmount_me",
+            "address": "0x80081c1",
+            "size": 6
+        },
+        {
+            "name": "null_op_utimens",
+            "address": "0x80081c9",
+            "size": 10
+        },
+        {
+            "name": "null_op_symlink",
+            "address": "0x80081d5",
+            "size": 10
+        },
+        {
+            "name": "null_op_readlink",
+            "address": "0x80081e1",
+            "size": 10
+        },
+        {
+            "name": "null_op_rename",
+            "address": "0x80081ed",
+            "size": 10
+        },
+        {
+            "name": "null_op_statvfs",
+            "address": "0x80081f9",
+            "size": 10
+        },
+        {
+            "name": "rtems_fatal",
+            "address": "0x8008345",
+            "size": 12
+        },
+        {
+            "name": "rtems_libio_init",
+            "address": "0x80083dd",
+            "size": 112
+        },
+        {
+            "name": "_RTEMS_tasks_Manager_initialization",
+            "address": "0x80098fd",
+            "size": 32
+        },
+        {
+            "name": "_RTEMS_tasks_Start_extension",
+            "address": "0x800991d",
+            "size": 16
+        },
+        {
+            "name": "rtems_initialize_data_structures",
+            "address": "0x800992d",
+            "size": 62
+        },
+        {
+            "name": "_Thread_Priority_do_perform_actions",
+            "address": "0x800b039",
+            "size": 1140
+        },
+        {
+            "name": "rtems_fatal",
+            "address": "0x800c2ad",
+            "size": 12
+        },
+        {
+            "name": "_Heap_Block_split",
+            "address": "0x800cae9",
+            "size": 302
+        },
+        {
+            "name": "_ARMV7M_Clock_initialize_early",
+            "address": "0x800d3ed",
+            "size": 42
+        },
+        {
+            "name": "_ARMV7M_TC_get_timecount",
+            "address": "0x800d469",
+            "size": 62
+        },
+        {
+            "name": "output_char_init",
+            "address": "0x800d4f5",
+            "size": 98
+        },
+        {
+            "name": "output_char",
+            "address": "0x800d559",
+            "size": 46
+        },
+        {
+            "name": "usart_first_open",
+            "address": "0x800d589",
+            "size": 94
+        },
+        {
+            "name": "stm32f4_usart_interrupt",
+            "address": "0x800d965",
+            "size": 90
+        },
+        {
+            "name": "usart_last_close",
+            "address": "0x800d5e9",
+            "size": 60
+        },
+        {
+            "name": "usart_write_support_polled",
+            "address": "0x800d625",
+            "size": 430
+        },
+        {
+            "name": "usart_initialize",
+            "address": "0x800d7d5",
+            "size": 186
+        },
+        {
+            "name": "usart_write_polled",
+            "address": "0x800d891",
+            "size": 70
+        },
+        {
+            "name": "usart_set_attributes",
+            "address": "0x800d8d9",
+            "size": 138
+        },
+        {
+            "name": "_Thread_Entry_adaptor_numeric",
+            "address": "0x8005305",
+            "size": 40
+        },
+        {
+            "name": "rtems_filesystem_default_freenode",
+            "address": "0x8008be5",
+            "size": 6
+        },
+        {
+            "name": "strcpy",
+            "address": "0x8010089",
+            "size": 186
+        },
+        {
+            "name": "_Thread_queue_Enqueue",
+            "address": "0x80054e1",
+            "size": 430
+        },
+        {
+            "name": "rtems_filesystem_initialize",
+            "address": "0x8000865",
+            "size": 74
+        },
+        {
+            "name": "rtems_filesystem_default_fsync_or_fdatasync",
+            "address": "0x80016d5",
+            "size": 32
+        },
+        {
+            "name": "bsp_interrupt_unlock",
+            "address": "0x800de6d",
+            "size": 28
+        },
+        {
+            "name": "Test_task",
+            "address": "0x8000679",
+            "size": 490
+        },
+        {
+            "name": "device_write",
+            "address": "0x8008d69",
+            "size": 24
+        },
+        {
+            "name": "__divdi3",
+            "address": "0x800e3a1",
+            "size": 782
+        },
+        {
+            "name": "_Memory_Get",
+            "address": "0x800e2ad",
+            "size": 14
+        },
+        {
+            "name": "_gettimeofday_r",
+            "address": "0x80107fd",
+            "size": 40
+        },
+        {
+            "name": "rtems_filesystem_default_write",
+            "address": "0x8008d01",
+            "size": 32
+        },
+        {
+            "name": "rtems_assoc_ptr_by_local",
+            "address": "0x800fee5",
+            "size": 120
+        },
+        {
+            "name": "_RTEMS_tasks_Create",
+            "address": "0x80097ed",
+            "size": 270
+        },
+        {
+            "name": "__aeabi_read_tp",
+            "address": "0x8007f45",
+            "size": 10
+        },
+        {
+            "name": "_Thread_queue_Deadlock_fatal",
+            "address": "0x80054cd",
+            "size": 20
+        },
+        {
+            "name": "rtems_interrupt_handler_remove",
+            "address": "0x800de05",
+            "size": 74
+        },
+        {
+            "name": "_Thread_Kill_zombies",
+            "address": "0x800657d",
+            "size": 180
+        },
+        {
+            "name": "rtems_vprintf",
+            "address": "0x800e979",
+            "size": 22
+        },
+        {
+            "name": "rtems_filesystem_do_unmount",
+            "address": "0x80015f9",
+            "size": 176
+        },
+        {
+            "name": "_CPU_Context_Initialize",
+            "address": "0x800c2b9",
+            "size": 114
+        },
+        {
+            "name": "rtems_configuration_get_maximum_timers",
+            "address": "0x80037b5",
+            "size": 26
+        },
+        {
+            "name": "rtems_filesystem_location_transform_to_global",
+            "address": "0x8001355",
+            "size": 208
+        },
+        {
+            "name": "rtems_configuration_get_maximum_barriers",
+            "address": "0x80036f1",
+            "size": 26
+        },
+        {
+            "name": "DataCorruption_Handler",
+            "address": "0x8003995",
+            "size": 18
+        },
+        {
+            "name": "_User_extensions_Thread_exitted_visitor",
+            "address": "0x80075d9",
+            "size": 82
+        },
+        {
+            "name": "rtems_filesystem_get_mount_handler",
+            "address": "0x800859d",
+            "size": 110
+        },
+        {
+            "name": "geteuid",
+            "address": "0x800838d",
+            "size": 12
+        },
+        {
+            "name": "Init",
+            "address": "0x8000349",
+            "size": 814
+        },
+        {
+            "name": "_Protected_heap_Get_free_information",
+            "address": "0x800a22d",
+            "size": 56
+        },
+        {
+            "name": "IMFS_stat",
+            "address": "0x8002dd9",
+            "size": 68
+        },
+        {
+            "name": "rtems_libio_allocate",
+            "address": "0x800c511",
+            "size": 66
+        },
+        {
+            "name": "rtems_filesystem_location_copy_and_detach",
+            "address": "0x8001241",
+            "size": 186
+        },
+        {
+            "name": "_RTEMS_Unlock_allocator",
+            "address": "0x8003829",
+            "size": 60
+        },
+        {
+            "name": "_TOD_Hook_Run",
+            "address": "0x80099ed",
+            "size": 202
+        },
+        {
+            "name": "IMFS_node_destroy",
+            "address": "0x8002c61",
+            "size": 14
+        },
+        {
+            "name": "rtems_filesystem_default_fsync_or_fdatasync_success",
+            "address": "0x8008bed",
+            "size": 8
+        },
+        {
+            "name": "_Thread_Continue",
+            "address": "0x8006d85",
+            "size": 272
+        },
+        {
+            "name": "rtems_heap_allocate_aligned_with_boundary",
+            "address": "0x80084a9",
+            "size": 162
+        },
+        {
+            "name": "_User_extensions_Add_set",
+            "address": "0x800c1cd",
+            "size": 156
+        },
+        {
+            "name": "_User_extensions_Handler_initialization",
+            "address": "0x8007085",
+            "size": 870
+        },
+        {
+            "name": "stm32f4_gpio_set_config_array",
+            "address": "0x800e1e5",
+            "size": 104
+        },
+        {
+            "name": "rtems_filesystem_eval_path_eat_delimiter",
+            "address": "0x8008a59",
+            "size": 132
+        },
+        {
+            "name": "rtems_filesystem_default_mmap",
+            "address": "0x8001775",
+            "size": 32
+        },
+        {
+            "name": "mknod",
+            "address": "0x80009d1",
+            "size": 144
+        },
+        {
+            "name": "rtems_deviceio_control",
+            "address": "0x800c68d",
+            "size": 40
+        },
+        {
+            "name": "rtems_task_wake_after",
+            "address": "0x8003665",
+            "size": 118
+        },
+        {
+            "name": "_Objects_Name_to_id_u32",
+            "address": "0x8009fb9",
+            "size": 566
+        },
+        {
+            "name": "rtems_clock_get_realtime_coarse_bintime",
+            "address": "0x8003ea1",
+            "size": 44
+        },
+        {
+            "name": "rtems_filesystem_location_detach",
+            "address": "0x80011fd",
+            "size": 68
+        },
+        {
+            "name": "rtems_interrupt_handler_install",
+            "address": "0x800dd81",
+            "size": 130
+        },
+        {
+            "name": "_RBTree_Insert_color",
+            "address": "0x800aa05",
+            "size": 1030
+        },
+        {
+            "name": "getegid",
+            "address": "0x8008381",
+            "size": 12
+        },
+        {
+            "name": "_Stack_Allocator_allocate_for_idle_workspace",
+            "address": "0x8004f91",
+            "size": 78
+        },
+        {
+            "name": "bsp_reset",
+            "address": "0x800dfe5",
+            "size": 18
+        },
+        {
+            "name": "rtems_filesystem_default_open",
+            "address": "0x8001795",
+            "size": 8
+        },
+        {
+            "name": "_Timecounter_Install",
+            "address": "0x8003ef9",
+            "size": 72
+        },
+        {
+            "name": "_Scheduler_default_Start_idle",
+            "address": "0x800465d",
+            "size": 48
+        },
+        {
+            "name": "_ARMV7M_Supervisor_call",
+            "address": "0x800809d",
+            "size": 116
+        },
+        {
+            "name": "_CPU_Exception_frame_print",
+            "address": "0x800efad",
+            "size": 926
+        },
+        {
+            "name": "rtems_configuration_get_maximum_partitions",
+            "address": "0x8003729",
+            "size": 26
+        },
+        {
+            "name": "device_ioctl",
+            "address": "0x8008d81",
+            "size": 24
+        },
+        {
+            "name": "_Mutex_recursive_Acquire",
+            "address": "0x800436d",
+            "size": 212
+        },
+        {
+            "name": "bsp_interrupt_get_dispatch_table_slot",
+            "address": "0x800db4d",
+            "size": 18
+        },
+        {
+            "name": "IMFS_rmnod",
+            "address": "0x8002d99",
+            "size": 64
+        },
+        {
+            "name": "_Thread_Dispatch_direct",
+            "address": "0x8005201",
+            "size": 92
+        },
+        {
+            "name": "rtems_assoc_local_by_remote",
+            "address": "0x800d30d",
+            "size": 18
+        },
+        {
+            "name": "memcpy",
+            "address": "0x8010499",
+            "size": 308
+        },
+        {
+            "name": "_Thread_Dispatch",
+            "address": "0x800be0d",
+            "size": 124
+        },
+        {
+            "name": "_User_extensions_Thread_terminate_visitor",
+            "address": "0x8007685",
+            "size": 82
+        },
+        {
+            "name": "rtems_deviceio_read",
+            "address": "0x800c5f5",
+            "size": 76
+        },
+        {
+            "name": "_Thread_Dispatch_dup",
+            "address": "0x8008025",
+            "size": 12
+        },
+        {
+            "name": "_Scheduler_priority_Update_priority",
+            "address": "0x80049c9",
+            "size": 612
+        },
+        {
+            "name": "_Thread_queue_Do_nothing_priority_actions",
+            "address": "0x8005849",
+            "size": 36
+        },
+        {
+            "name": "_Thread_Dispatch_enable",
+            "address": "0x800525d",
+            "size": 168
+        },
+        {
+            "name": "_User_extensions_Thread_begin_visitor",
+            "address": "0x8007585",
+            "size": 82
+        },
+        {
+            "name": "_Timecounter_Sbinuptime",
+            "address": "0x8003d2d",
+            "size": 104
+        },
+        {
+            "name": "_Thread_Exit",
+            "address": "0x80067c1",
+            "size": 66
+        },
+        {
+            "name": "_Thread_Load_environment",
+            "address": "0x800bd81",
+            "size": 138
+        },
+        {
+            "name": "_Thread_queue_Extract_locked",
+            "address": "0x8005691",
+            "size": 76
+        },
+        {
+            "name": "rtems_initialize_executive",
+            "address": "0x800996d",
+            "size": 128
+        },
+        {
+            "name": "rtems_current_user_env_get",
+            "address": "0x8008135",
+            "size": 34
+        },
+        {
+            "name": "IMFS_create_node",
+            "address": "0x8008da1",
+            "size": 132
+        },
+        {
+            "name": "malloc",
+            "address": "0x800844d",
+            "size": 48
+        },
+        {
+            "name": "_TOD_Validate",
+            "address": "0x80031ed",
+            "size": 504
+        },
+        {
+            "name": "rtems_filesystem_default_ftruncate",
+            "address": "0x80016f5",
+            "size": 32
+        },
+        {
+            "name": "_TOD_Lock",
+            "address": "0x8003b2d",
+            "size": 58
+        },
+        {
+            "name": "_Thread_queue_Enqueue_do_nothing_extra",
+            "address": "0x80054a9",
+            "size": 34
+        },
+        {
+            "name": "_Thread_queue_Flush_critical",
+            "address": "0x800be89",
+            "size": 568
+        },
+        {
+            "name": "rtems_clock_set",
+            "address": "0x8003105",
+            "size": 150
+        },
+        {
+            "name": "rtems_io_open",
+            "address": "0x800c755",
+            "size": 52
+        },
+        {
+            "name": "rtems_io_close",
+            "address": "0x800c6ed",
+            "size": 52
+        },
+        {
+            "name": "_Console_simple_Initialize",
+            "address": "0x80008b1",
+            "size": 30
+        },
+        {
+            "name": "_ARMV7M_Interrupt_service_enter",
+            "address": "0x800f34d",
+            "size": 26
+        },
+        {
+            "name": "_API_Mutex_Lock",
+            "address": "0x80038dd",
+            "size": 94
+        },
+        {
+            "name": "_Scheduler_priority_Block",
+            "address": "0x8004885",
+            "size": 324
+        },
+        {
+            "name": "IMFS_initialize_support",
+            "address": "0x8001c71",
+            "size": 74
+        },
+        {
+            "name": "rtems_io_read",
+            "address": "0x800c789",
+            "size": 52
+        },
+        {
+            "name": "IMFS_do_nothing_destroy",
+            "address": "0x8002c95",
+            "size": 6
+        },
+        {
+            "name": "rtems_filesystem_eval_path_start",
+            "address": "0x8000fb9",
+            "size": 60
+        },
+        {
+            "name": "SigMismatch_Handler",
+            "address": "0x80039a9",
+            "size": 18
+        },
+        {
+            "name": "_Thread_Priority_perform_actions",
+            "address": "0x800afad",
+            "size": 138
+        },
+        {
+            "name": "bsp_interrupt_entry_find",
+            "address": "0x800db9d",
+            "size": 138
+        },
+        {
+            "name": "__wrap_putchar",
+            "address": "0x800e389",
+            "size": 22
+        },
+        {
+            "name": "_Thread_Yield",
+            "address": "0x8006ec5",
+            "size": 112
+        },
+        {
+            "name": "rtems_configuration_get_maximum_tasks",
+            "address": "0x80037d1",
+            "size": 26
+        },
+        {
+            "name": "rtems_task_start",
+            "address": "0x80035d5",
+            "size": 144
+        },
+        {
+            "name": "_Heap_Get_free_information",
+            "address": "0x800cf19",
+            "size": 510
+        },
+        {
+            "name": "rtems_test_printf",
+            "address": "0x800e329",
+            "size": 46
+        },
+        {
+            "name": "bsp_start_hook_1",
+            "address": "0x80001cd",
+            "size": 170
+        },
+        {
+            "name": "_Clock_Initialize",
+            "address": "0x800d419",
+            "size": 80
+        },
+        {
+            "name": "_Scheduler_default_Unmap_priority",
+            "address": "0x80045c5",
+            "size": 44
+        },
+        {
+            "name": "_User_extensions_Thread_start_visitor",
+            "address": "0x80074d5",
+            "size": 86
+        },
+        {
+            "name": "device_ftruncate",
+            "address": "0x8008d99",
+            "size": 8
+        },
+        {
+            "name": "rtems_filesystem_location_clone",
+            "address": "0x8008241",
+            "size": 50
+        },
+        {
+            "name": "_Internal_error",
+            "address": "0x8003d15",
+            "size": 22
+        },
+        {
+            "name": "_User_extensions_Thread_create_visitor",
+            "address": "0x80073ed",
+            "size": 142
+        },
+        {
+            "name": "IMFS_mount",
+            "address": "0x8002b99",
+            "size": 72
+        },
+        {
+            "name": "rtems_filesystem_default_readv",
+            "address": "0x800179d",
+            "size": 108
+        },
+        {
+            "name": "_CPU_Context_switch",
+            "address": "0x8007f75",
+            "size": 50
+        },
+        {
+            "name": "_Thread_Set_state_locked",
+            "address": "0x8006b71",
+            "size": 106
+        },
+        {
+            "name": "_Objects_Free_nothing",
+            "address": "0x8009f05",
+            "size": 34
+        },
+        {
+            "name": "rtems_filesystem_global_location_release",
+            "address": "0x8001465",
+            "size": 162
+        },
+        {
+            "name": "boot_card",
+            "address": "0x800da15",
+            "size": 38
+        },
+        {
+            "name": "stm32f4_gpio_set_config",
+            "address": "0x800e089",
+            "size": 346
+        },
+        {
+            "name": "_User_extensions_Iterate",
+            "address": "0x80076d9",
+            "size": 572
+        },
+        {
+            "name": "rtems_assoc_ptr_by_remote",
+            "address": "0x800d351",
+            "size": 120
+        },
+        {
+            "name": "_User_extensions_Fatal_visitor",
+            "address": "0x800762d",
+            "size": 88
+        },
+        {
+            "name": "_Heap_Block_allocate",
+            "address": "0x800c941",
+            "size": 422
+        },
+        {
+            "name": "_ARMV7M_Exception_default",
+            "address": "0x8007fa9",
+            "size": 120
+        },
+        {
+            "name": "_User_extensions_Thread_restart_visitor",
+            "address": "0x800752d",
+            "size": 86
+        },
+        {
+            "name": "rtems_task_exit",
+            "address": "0x8003551",
+            "size": 12
+        },
+        {
+            "name": "__udivdi3",
+            "address": "0x800e6b1",
+            "size": 712
+        },
+        {
+            "name": "device_open",
+            "address": "0x8008d21",
+            "size": 26
+        },
+        {
+            "name": "device_close",
+            "address": "0x8008d3d",
+            "size": 18
+        },
+        {
+            "name": "_Mutex_recursive_Release",
+            "address": "0x8004441",
+            "size": 198
+        },
+        {
+            "name": "rtems_clock_get_monotonic_coarse",
+            "address": "0x8003e6d",
+            "size": 52
+        },
+        {
+            "name": "gmtime_r",
+            "address": "0x8008e71",
+            "size": 512
+        },
+        {
+            "name": "rtems_filesystem_eval_path_next_token",
+            "address": "0x8008add",
+            "size": 244
+        },
+        {
+            "name": "_Objects_Free_static",
+            "address": "0x8004569",
+            "size": 48
+        },
+        {
+            "name": "rtems_filesystem_eval_path_restart",
+            "address": "0x8001119",
+            "size": 100
+        },
+        {
+            "name": "rtems_termios_kqfilter",
+            "address": "0x8008c15",
+            "size": 8
+        },
+        {
+            "name": "rtems_io_control",
+            "address": "0x800c721",
+            "size": 52
+        },
+        {
+            "name": "rtems_filesystem_default_ftruncate_directory",
+            "address": "0x8008bf5",
+            "size": 32
+        },
+        {
+            "name": "_Scheduler_Handler_initialization",
+            "address": "0x800aec1",
+            "size": 72
+        },
+        {
+            "name": "rtems_filesystem_default_writev",
+            "address": "0x8001809",
+            "size": 108
+        },
+        {
+            "name": "_Heap_Allocate_aligned_with_boundary",
+            "address": "0x8009ab9",
+            "size": 946
+        },
+        {
+            "name": "_Stack_Allocate",
+            "address": "0x8006c55",
+            "size": 64
+        },
+        {
+            "name": "rtems_libio_post_driver",
+            "address": "0x8000cb5",
+            "size": 102
+        },
+        {
+            "name": "rtems_termios_enqueue_raw_characters",
+            "address": "0x800e9f1",
+            "size": 848
+        },
+        {
+            "name": "_Thread_CPU_budget_consume_and_yield",
+            "address": "0x800c0c1",
+            "size": 180
+        },
+        {
+            "name": "_reclaim_reent",
+            "address": "0x800ff5d",
+            "size": 152
+        },
+        {
+            "name": "rtems_filesystem_eval_path_check_access",
+            "address": "0x8008889",
+            "size": 152
+        },
+        {
+            "name": "calloc",
+            "address": "0x8008205",
+            "size": 60
+        },
+        {
+            "name": "_Terminate",
+            "address": "0x8003cb9",
+            "size": 34
+        },
+        {
+            "name": "IMFS_node_initialize_default",
+            "address": "0x8001cbd",
+            "size": 6
+        },
+        {
+            "name": "rtems_filesystem_default_ioctl",
+            "address": "0x8001715",
+            "size": 32
+        },
+        {
+            "name": "_IO_Vprintf",
+            "address": "0x800f39d",
+            "size": 2198
+        },
+        {
+            "name": "rtems_filesystem_mknod",
+            "address": "0x800095d",
+            "size": 116
+        },
+        {
+            "name": "bsp_interrupt_entry_remove",
+            "address": "0x800e24d",
+            "size": 94
+        },
+        {
+            "name": "stm32f4_rcc_set_clock",
+            "address": "0x800d9c1",
+            "size": 62
+        },
+        {
+            "name": "_Thread_Timeout",
+            "address": "0x8006e95",
+            "size": 46
+        },
+        {
+            "name": "_Thread_Set_life_protection",
+            "address": "0x8006805",
+            "size": 226
+        },
+        {
+            "name": "_Chain_Initialize",
+            "address": "0x80039bd",
+            "size": 368
+        },
+        {
+            "name": "_Thread_Initialize",
+            "address": "0x800b919",
+            "size": 1126
+        },
+        {
+            "name": "_Thread_Initialize_information",
+            "address": "0x800af09",
+            "size": 56
+        },
+        {
+            "name": "IMFS_utimens",
+            "address": "0x800301d",
+            "size": 38
+        },
+        {
+            "name": "_Thread_Free",
+            "address": "0x800b7ed",
+            "size": 300
+        },
+        {
+            "name": "IMFS_memfile_write",
+            "address": "0x8001de1",
+            "size": 704
+        },
+        {
+            "name": "rtems_configuration_get_maximum_periods",
+            "address": "0x8003745",
+            "size": 26
+        },
+        {
+            "name": "rtems_filesystem_location_copy",
+            "address": "0x80011c5",
+            "size": 56
+        },
+        {
+            "name": "_TOD_Set",
+            "address": "0x8003ba5",
+            "size": 274
+        },
+        {
+            "name": "bsp_interrupt_check_and_lock",
+            "address": "0x800db61",
+            "size": 58
+        },
+        {
+            "name": "_Thread_Handler",
+            "address": "0x80053f5",
+            "size": 74
+        },
+        {
+            "name": "_Thread_CPU_budget_set_to_ticks_per_timeslice",
+            "address": "0x800c175",
+            "size": 50
+        },
+        {
+            "name": "bsp_interrupt_handler_default",
+            "address": "0x800da01",
+            "size": 12
+        },
+        {
+            "name": "_ISR_Handler_initialization",
+            "address": "0x8009e6d",
+            "size": 66
+        },
+        {
+            "name": "rtems_filesystem_default_fcntl",
+            "address": "0x80016c5",
+            "size": 8
+        },
+        {
+            "name": "_ARM_Exception_default",
+            "address": "0x800c2a5",
+            "size": 8
+        },
+        {
+            "name": "rtems_status_code_to_errno",
+            "address": "0x800c6b5",
+            "size": 56
+        },
+        {
+            "name": "rtems_filesystem_eval_path_generic",
+            "address": "0x8008921",
+            "size": 312
+        },
+        {
+            "name": "_Thread_Get",
+            "address": "0x800532d",
+            "size": 200
+        },
+        {
+            "name": "rtems_libio_exit",
+            "address": "0x8008399",
+            "size": 26
+        },
+        {
+            "name": "IMFS_add_node",
+            "address": "0x8001875",
+            "size": 228
+        },
+        {
+            "name": "_Protected_heap_Free",
+            "address": "0x800a1f1",
+            "size": 58
+        },
+        {
+            "name": "_Heap_Free",
+            "address": "0x800cc19",
+            "size": 766
+        },
+        {
+            "name": "_Objects_Get",
+            "address": "0x8009f29",
+            "size": 142
+        },
+        {
+            "name": "_Thread_Clear_state_locked",
+            "address": "0x800b54d",
+            "size": 138
+        },
+        {
+            "name": "_ARMV7M_Set_exception_priority",
+            "address": "0x800d2ed",
+            "size": 32
+        },
+        {
+            "name": "_RTEMS_tasks_Initialize_user_task",
+            "address": "0x800358d",
+            "size": 70
+        },
+        {
+            "name": "_free_r",
+            "address": "0x8010825",
+            "size": 14
+        },
+        {
+            "name": "_Thread_queue_Surrender",
+            "address": "0x80056dd",
+            "size": 154
+        },
+        {
+            "name": "_Timecounter_Getnanouptime",
+            "address": "0x8003e6d",
+            "size": 52
+        },
+        {
+            "name": "rtems_printf",
+            "address": "0x800e991",
+            "size": 44
+        },
+        {
+            "name": "bsp_start",
+            "address": "0x800dff9",
+            "size": 142
+        },
+        {
+            "name": "_CPU_Initialize",
+            "address": "0x800c32d",
+            "size": 24
+        },
+        {
+            "name": "_Thread_Clear_state",
+            "address": "0x800b5d9",
+            "size": 152
+        },
+        {
+            "name": "IMFS_node_destroy_default",
+            "address": "0x8002c9d",
+            "size": 12
+        },
+        {
+            "name": "rtems_test_fatal_extension",
+            "address": "0x800e321",
+            "size": 6
+        },
+        {
+            "name": "rtems_putc",
+            "address": "0x8000d1d",
+            "size": 36
+        },
+        {
+            "name": "_Thread_Start",
+            "address": "0x8006cc5",
+            "size": 190
+        },
+        {
+            "name": "_Timecounter_Microtime",
+            "address": "0x8003d95",
+            "size": 214
+        },
+        {
+            "name": "_CPU_Thread_Idle_body",
+            "address": "0x8007f55",
+            "size": 8
+        },
+        {
+            "name": "rtems_filesystem_default_close",
+            "address": "0x80016bd",
+            "size": 8
+        },
+        {
+            "name": "IMFS_node_free",
+            "address": "0x8002c71",
+            "size": 28
+        },
+        {
+            "name": "rtems_put_char",
+            "address": "0x800fc35",
+            "size": 14
+        },
+        {
+            "name": "rtems_test_begin",
+            "address": "0x800e2bd",
+            "size": 56
+        },
+        {
+            "name": "__register_exitproc",
+            "address": "0x8010759",
+            "size": 164
+        },
+        {
+            "name": "vprintk",
+            "address": "0x800ed5d",
+            "size": 26
+        },
+        {
+            "name": "strlcpy",
+            "address": "0x8010441",
+            "size": 40
+        },
+        {
+            "name": "_Thread_queue_Surrender_no_priority",
+            "address": "0x8005779",
+            "size": 206
+        },
+        {
+            "name": "rtems_clock_get_monotonic_sbintime",
+            "address": "0x8003d2d",
+            "size": 104
+        },
+        {
+            "name": "rtems_filesystem_global_location_obtain",
+            "address": "0x8001509",
+            "size": 240
+        },
+        {
+            "name": "rtems_termios_set_initial_baud",
+            "address": "0x800ed41",
+            "size": 28
+        },
+        {
+            "name": "IMFS_stat_file",
+            "address": "0x8002e95",
+            "size": 34
+        },
+        {
+            "name": "bsp_fatal_extension",
+            "address": "0x800da3d",
+            "size": 270
+        },
+        {
+            "name": "_Thread_Do_dispatch",
+            "address": "0x8004fe1",
+            "size": 542
+        },
+        {
+            "name": "rtems_filesystem_default_are_nodes_equal",
+            "address": "0x80016a9",
+            "size": 18
+        },
+        {
+            "name": "_Scheduler_default_Map_priority",
+            "address": "0x8004599",
+            "size": 44
+        },
+        {
+            "name": "_TOD_To_seconds",
+            "address": "0x800319d",
+            "size": 80
+        },
+        {
+            "name": "_Malloc_Process_deferred_frees",
+            "address": "0x8008275",
+            "size": 126
+        },
+        {
+            "name": "bsp_interrupt_lock",
+            "address": "0x800de51",
+            "size": 28
+        },
+        {
+            "name": "rtems_filesystem_default_unlock",
+            "address": "0x8001741",
+            "size": 12
+        },
+        {
+            "name": "memcmp",
+            "address": "0x8010005",
+            "size": 130
+        },
+        {
+            "name": "IMFS_default_free_space",
+            "address": "0x8002525",
+            "size": 12
+        },
+        {
+            "name": "IMFS_initialize_node",
+            "address": "0x8002be1",
+            "size": 112
+        },
+        {
+            "name": "printk",
+            "address": "0x800e9bd",
+            "size": 36
+        },
+        {
+            "name": "rtems_filesystem_default_poll",
+            "address": "0x8008cd9",
+            "size": 8
+        },
+        {
+            "name": "_CPU_Context_restore",
+            "address": "0x8007f5d",
+            "size": 22
+        },
+        {
+            "name": "IMFS_node_initialize_directory",
+            "address": "0x8008e25",
+            "size": 22
+        },
+        {
+            "name": "_Thread_Create_idle",
+            "address": "0x800b671",
+            "size": 334
+        },
+        {
+            "name": "_User_extensions_Thread_delete_visitor",
+            "address": "0x800747d",
+            "size": 86
+        },
+        {
+            "name": "IMFS_chown",
+            "address": "0x8001959",
+            "size": 32
+        },
+        {
+            "name": "_Thread_Priority_update",
+            "address": "0x800b4ad",
+            "size": 158
+        },
+        {
+            "name": "rtems_libio_unlock",
+            "address": "0x80083c9",
+            "size": 20
+        },
+        {
+            "name": "_Thread_Handler_initialization",
+            "address": "0x800af41",
+            "size": 108
+        },
+        {
+            "name": "rtems_event_system_send",
+            "address": "0x8003469",
+            "size": 46
+        },
+        {
+            "name": "IMFS_statvfs",
+            "address": "0x8002e1d",
+            "size": 118
+        },
+        {
+            "name": "rtems_libio_lock",
+            "address": "0x80083b5",
+            "size": 20
+        },
+        {
+            "name": "_RTEMS_Lock_allocator",
+            "address": "0x80037ed",
+            "size": 58
+        },
+        {
+            "name": "_Objects_Close",
+            "address": "0x8009ed5",
+            "size": 48
+        },
+        {
+            "name": "rtems_malloc",
+            "address": "0x800854d",
+            "size": 22
+        },
+        {
+            "name": "memset",
+            "address": "0x80105cd",
+            "size": 134
+        },
+        {
+            "name": "_Malloc_Initialize",
+            "address": "0x8008581",
+            "size": 28
+        },
+        {
+            "name": "rtems_fatal_source_text",
+            "address": "0x800ed91",
+            "size": 102
+        },
+        {
+            "name": "IMFS_node_remove_directory",
+            "address": "0x8008e3d",
+            "size": 52
+        },
+        {
+            "name": "_Thread_Get_name",
+            "address": "0x800ef25",
+            "size": 134
+        },
+        {
+            "name": "_Heap_Initialize",
+            "address": "0x800c7f1",
+            "size": 336
+        },
+        {
+            "name": "time",
+            "address": "0x8010469",
+            "size": 46
+        },
+        {
+            "name": "rtems_libio_from_fcntl_flags",
+            "address": "0x800c4e5",
+            "size": 44
+        },
+        {
+            "name": "_ISR_Is_in_progress",
+            "address": "0x800ee6d",
+            "size": 48
+        },
+        {
+            "name": "rtems_filesystem_eval_path_recursive",
+            "address": "0x8000ff5",
+            "size": 292
+        },
+        {
+            "name": "IMFS_unmount",
+            "address": "0x8002fd1",
+            "size": 76
+        },
+        {
+            "name": "rtems_libio_free_iop",
+            "address": "0x800c555",
+            "size": 88
+        },
+        {
+            "name": "rtems_printk_printer",
+            "address": "0x800e9e1",
+            "size": 16
+        },
+        {
+            "name": "_API_Mutex_Unlock",
+            "address": "0x800393d",
+            "size": 86
+        },
+        {
+            "name": "bsp_start_hook_0",
+            "address": "0x80001c5",
+            "size": 6
+        },
+        {
+            "name": "rtems_filesystem_eval_path_error",
+            "address": "0x8000ecd",
+            "size": 64
+        },
+        {
+            "name": "rtems_version",
+            "address": "0x800ee19",
+            "size": 14
+        },
+        {
+            "name": "_Objects_Initialize_information",
+            "address": "0x800d119",
+            "size": 468
+        },
+        {
+            "name": "rtems_filesystem_global_location_assign",
+            "address": "0x8001425",
+            "size": 64
+        },
+        {
+            "name": "IMFS_default_deallocate_block",
+            "address": "0x8002519",
+            "size": 12
+        },
+        {
+            "name": "_Stack_Free",
+            "address": "0x8006c95",
+            "size": 46
+        },
+        {
+            "name": "_Scheduler_priority_Node_initialize",
+            "address": "0x8004811",
+            "size": 114
+        },
+        {
+            "name": "_Objects_Name_to_string",
+            "address": "0x800fc5d",
+            "size": 628
+        },
+        {
+            "name": "_API_Mutex_Is_owner",
+            "address": "0x80038a5",
+            "size": 56
+        },
+        {
+            "name": "mount",
+            "address": "0x8000a61",
+            "size": 580
+        },
+        {
+            "name": "_Malloc_System_state",
+            "address": "0x800847d",
+            "size": 44
+        },
+        {
+            "name": "strcmp",
+            "address": "0x8010161",
+            "size": 734
+        },
+        {
+            "name": "_Workspace_Handler_initialization",
+            "address": "0x800de89",
+            "size": 126
+        },
+        {
+            "name": "rtems_fatal_error_occurred",
+            "address": "0x80036dd",
+            "size": 20
+        },
+        {
+            "name": "_Timecounter_Getnanotime",
+            "address": "0x8003ecd",
+            "size": 44
+        },
+        {
+            "name": "malloc_free_space",
+            "address": "0x8008565",
+            "size": 28
+        },
+        {
+            "name": "_ARMV7M_Interrupt_service_leave",
+            "address": "0x800f369",
+            "size": 52
+        },
+        {
+            "name": "rtems_configuration_get_maximum_semaphores",
+            "address": "0x8003799",
+            "size": 26
+        },
+        {
+            "name": "_Thread_Entry_adaptor_idle",
+            "address": "0x800b7c1",
+            "size": 42
+        },
+        {
+            "name": "rtems_task_ident",
+            "address": "0x800355d",
+            "size": 46
+        },
+        {
+            "name": "_Watchdog_Insert",
+            "address": "0x8007915",
+            "size": 342
+        },
+        {
+            "name": "rtems_filesystem_default_kqfilter",
+            "address": "0x8008c15",
+            "size": 8
+        },
+        {
+            "name": "_TLS_Get_allocation_size",
+            "address": "0x8006f35",
+            "size": 336
+        },
+        {
+            "name": "_RBTree_Minimum",
+            "address": "0x800ae0d",
+            "size": 180
+        },
+        {
+            "name": "rtems_configuration_get_maximum_ports",
+            "address": "0x8003761",
+            "size": 26
+        },
+        {
+            "name": "rtems_test_end",
+            "address": "0x800e2f5",
+            "size": 30
+        },
+        {
+            "name": "rtems_configuration_get_maximum_message_queues",
+            "address": "0x800370d",
+            "size": 26
+        },
+        {
+            "name": "rtems_filesystem_location_free",
+            "address": "0x8008351",
+            "size": 48
+        },
+        {
+            "name": "rtems_test_exit",
+            "address": "0x800e315",
+            "size": 10
+        },
+        {
+            "name": "atexit",
+            "address": "0x8010655",
+            "size": 12
+        },
+        {
+            "name": "_Console_simple_Read",
+            "address": "0x80008f9",
+            "size": 50
+        },
+        {
+            "name": "_Thread_Start_multitasking",
+            "address": "0x800c1a9",
+            "size": 36
+        },
+        {
+            "name": "rtems_filesystem_eval_path_continue",
+            "address": "0x8000d41",
+            "size": 180
+        },
+        {
+            "name": "bsp_interrupt_vector_enable",
+            "address": "0x800df09",
+            "size": 30
+        },
+        {
+            "name": "_Scheduler_default_Release_job",
+            "address": "0x8004615",
+            "size": 34
+        },
+        {
+            "name": "_Scheduler_default_Node_destroy",
+            "address": "0x80045f1",
+            "size": 34
+        },
+        {
+            "name": "rtems_internal_error_text",
+            "address": "0x800edf9",
+            "size": 32
+        },
+        {
+            "name": "_RTEMS_Allocator_is_owner",
+            "address": "0x8003865",
+            "size": 64
+        },
+        {
+            "name": "rtems_termios_poll",
+            "address": "0x8008cd9",
+            "size": 8
+        },
+        {
+            "name": "rtems_clock_get_tod",
+            "address": "0x8003045",
+            "size": 192
+        },
+        {
+            "name": "rtems_interrupt_entry_install",
+            "address": "0x800dc45",
+            "size": 314
+        },
+        {
+            "name": "rtems_configuration_get_maximum_regions",
+            "address": "0x800377d",
+            "size": 26
+        },
+        {
+            "name": "_Watchdog_Tick",
+            "address": "0x8007bed",
+            "size": 730
+        },
+        {
+            "name": "rtems_filesystem_default_lseek",
+            "address": "0x800174d",
+            "size": 40
+        },
+        {
+            "name": "_ARMV7M_Clock_handler",
+            "address": "0x800d3c9",
+            "size": 34
+        },
+        {
+            "name": "_ARMV7M_NVIC_Interrupt_dispatch",
+            "address": "0x800d4a9",
+            "size": 76
+        },
+        {
+            "name": "_Watchdog_Do_tickle",
+            "address": "0x8007b0d",
+            "size": 224
+        },
+        {
+            "name": "rtems_filesystem_default_eval_path",
+            "address": "0x8008bd1",
+            "size": 20
+        },
+        {
+            "name": "rtems_configuration_get_stack_space_size",
+            "address": "0x800ee29",
+            "size": 66
+        },
+        {
+            "name": "_Scheduler_priority_Initialize",
+            "address": "0x800468d",
+            "size": 388
+        },
+        {
+            "name": "_CPU_ISR_Set_level",
+            "address": "0x8008111",
+            "size": 12
+        },
+        {
+            "name": "rtems_filesystem_default_lseek_directory",
+            "address": "0x8008c1d",
+            "size": 52
+        },
+        {
+            "name": "_TOD_Unlock",
+            "address": "0x8003b69",
+            "size": 60
+        },
+        {
+            "name": "rtems_filesystem_default_lseek_file",
+            "address": "0x8008c51",
+            "size": 136
+        },
+        {
+            "name": "IMFS_mknod",
+            "address": "0x8002b1d",
+            "size": 122
+        },
+        {
+            "name": "IMFS_readlink",
+            "address": "0x8002f15",
+            "size": 132
+        },
+        {
+            "name": "rtems_filesystem_default_read",
+            "address": "0x8008ce1",
+            "size": 32
+        },
+        {
+            "name": "rtems_assoc_local_by_remote_bitfield",
+            "address": "0x800d321",
+            "size": 48
+        },
+        {
+            "name": "_Event_Surrender",
+            "address": "0x8009741",
+            "size": 160
+        },
+        {
+            "name": "IMFS_fchmod",
+            "address": "0x8001c29",
+            "size": 30
+        },
+        {
+            "name": "_Scheduler_default_Cancel_job",
+            "address": "0x8004639",
+            "size": 36
+        },
+        {
+            "name": "libchip_serial_default_probe",
+            "address": "0x800da0d",
+            "size": 8
+        },
+        {
+            "name": "_Timecounter_Set_clock",
+            "address": "0x8003f41",
+            "size": 256
+        },
+        {
+            "name": "_ARMV7M_Start_multitasking",
+            "address": "0x800c345",
+            "size": 24
+        },
+        {
+            "name": "rtems_deviceio_write",
+            "address": "0x800c641",
+            "size": 76
+        },
+        {
+            "name": "_Timecounter_Tick",
+            "address": "0x8004339",
+            "size": 44
+        },
+        {
+            "name": "__wrap_printf",
+            "address": "0x800e359",
+            "size": 46
+        },
+        {
+            "name": "rtems_filesystem_default_lock",
+            "address": "0x8001735",
+            "size": 12
+        },
+        {
+            "name": "_Scheduler_priority_Unblock",
+            "address": "0x8004d09",
+            "size": 386
+        },
+        {
+            "name": "rtems_termios_number_to_baud",
+            "address": "0x800fc45",
+            "size": 22
+        },
+        {
+            "name": "rtems_filesystem_check_access",
+            "address": "0x80087fd",
+            "size": 138
+        },
+        {
+            "name": "bsp_interrupt_vector_disable",
+            "address": "0x800df29",
+            "size": 30
+        },
+        {
+            "name": "IMFS_link",
+            "address": "0x8001ce1",
+            "size": 120
+        },
+        {
+            "name": "_Scheduler_priority_Yield",
+            "address": "0x8004e8d",
+            "size": 258
+        },
+        {
+            "name": "bsp_interrupt_facility_initialize",
+            "address": "0x800df49",
+            "size": 154
+        },
+        {
+            "name": "_Workspace_Free",
+            "address": "0x800c269",
+            "size": 60
+        },
+        {
+            "name": "_Timecounter_Getbintime",
+            "address": "0x8003ea1",
+            "size": 44
+        },
+        {
+            "name": "_Workspace_Malloc_initialize_unified",
+            "address": "0x8007f19",
+            "size": 42
+        },
+        {
+            "name": "_RTEMS_Name_to_id",
+            "address": "0x80097e1",
+            "size": 12
+        },
+        {
+            "name": "getchark",
+            "address": "0x800092d",
+            "size": 28
+        },
+        {
+            "name": "_Scheduler_priority_Schedule",
+            "address": "0x8004c2d",
+            "size": 220
+        },
+        {
+            "name": "rtems_heap_null_extend",
+            "address": "0x80087f5",
+            "size": 8
+        },
+        {
+            "name": "rtems_configuration_get_rtems_api_configuration",
+            "address": "0x80033e5",
+            "size": 100
+        },
+        {
+            "name": "IMFS_rename",
+            "address": "0x8002ca9",
+            "size": 212
+        },
+        {
+            "name": "_ARMV7M_Pendable_service_call",
+            "address": "0x8008031",
+            "size": 98
+        },
+        {
+            "name": "IMFS_node_remove_default",
+            "address": "0x8002c8d",
+            "size": 6
+        },
+        {
+            "name": "_Objects_Allocate_static",
+            "address": "0x8004509",
+            "size": 94
+        },
+        {
+            "name": "_Watchdog_Remove",
+            "address": "0x8007a6d",
+            "size": 160
+        },
+        {
+            "name": "rtems_assoc_remote_by_local",
+            "address": "0x800fed1",
+            "size": 18
+        },
+        {
+            "name": "_Thread_Set_state",
+            "address": "0x8006bdd",
+            "size": 120
+        },
+        {
+            "name": "strlen",
+            "address": "0x8010681",
+            "size": 216
+        },
+        {
+            "name": "bsp_interrupt_initialize",
+            "address": "0x800dc29",
+            "size": 26
+        },
+        {
+            "name": "device_read",
+            "address": "0x8008d51",
+            "size": 24
+        },
+        {
+            "name": "open",
+            "address": "0x800860d",
+            "size": 488
+        },
+        {
+            "name": "newlib_terminate_hook",
+            "address": "0x8000ca5",
+            "size": 14
+        },
+        {
+            "name": "rtems_clock_get_realtime_coarse",
+            "address": "0x8003ecd",
+            "size": 44
+        },
+        {
+            "name": "_Semaphore_Post_binary",
+            "address": "0x800ee9d",
+            "size": 134
+        },
+        {
+            "name": "IMFS_default_allocate_block",
+            "address": "0x8002501",
+            "size": 24
+        },
+        {
+            "name": "_Objects_Allocate_none",
+            "address": "0x8009eb1",
+            "size": 36
+        },
+        {
+            "name": "div",
+            "address": "0x800fff5",
+            "size": 14
+        },
+        {
+            "name": "_TOD_mktime",
+            "address": "0x8009071",
+            "size": 1744
+        },
+        {
+            "name": "_RBTree_Extract",
+            "address": "0x800a265",
+            "size": 1950
+        },
+        {
+            "name": "_Thread_Dispatch_direct_no_return",
+            "address": "0x8005201",
+            "size": 92
+        },
+        {
+            "name": "rtems_clock_get_realtime_timeval",
+            "address": "0x8003d95",
+            "size": 214
+        },
+        {
+            "name": "IMFS_symlink",
+            "address": "0x8002eb9",
+            "size": 92
+        },
+        {
+            "name": "IMFS_eval_path",
+            "address": "0x8001ac5",
+            "size": 22
+        },
+        {
+            "name": "_Workspace_Allocate",
+            "address": "0x8007ec9",
+            "size": 80
+        },
+        {
+            "name": "rtems_filesystem_eval_path_cleanup",
+            "address": "0x800117d",
+            "size": 70
+        },
+        {
+            "name": "rtems_filesystem_default_fsunmount",
+            "address": "0x80016cd",
+            "size": 6
+        },
+        {
+            "name": "rtems_filesystem_location_remove_from_mt_entry",
+            "address": "0x80012fd",
+            "size": 88
+        },
+        {
+            "name": "IMFS_node_clone",
+            "address": "0x8002c51",
+            "size": 16
+        },
+        {
+            "name": "rtems_termios_mmap",
+            "address": "0x8001775",
+            "size": 32
+        },
+        {
+            "name": "rtems_shutdown_executive",
+            "address": "0x800ed79",
+            "size": 22
+        },
+        {
+            "name": "mkdir",
+            "address": "0x8000949",
+            "size": 20
+        },
+        {
+            "name": "rtems_status_text",
+            "address": "0x8003449",
+            "size": 32
+        },
+        {
+            "name": "close",
+            "address": "0x800c35d",
+            "size": 392
+        },
+        {
+            "name": "rtems_deviceio_open",
+            "address": "0x800c5ad",
+            "size": 34
+        },
+        {
+            "name": "rtems_filesystem_eval_path_start_with_root_and_current",
+            "address": "0x8000f0d",
+            "size": 172
+        },
+        {
+            "name": "rtems_io_write",
+            "address": "0x800c7bd",
+            "size": 52
+        },
+        {
+            "name": "rtems_deviceio_close",
+            "address": "0x800c5d1",
+            "size": 34
+        },
+        {
+            "name": "free",
+            "address": "0x80082f5",
+            "size": 80
+        },
+        {
+            "name": "rtems_task_create",
+            "address": "0x8003499",
+            "size": 70
+        }
+    ],
+    "variables": [
+        {
+            "name": "_Configuration_Scheduler_priority_dflt",
+            "address": "0x200006dc",
+            "size": 3108
+        },
+        {
+            "name": "_Thread_Local_table",
+            "address": "0x20001300",
+            "size": 4
+        },
+        {
+            "name": "_Thread_Objects",
+            "address": "0x200033a0",
+            "size": 536
+        },
+        {
+            "name": "_Thread_Heads",
+            "address": "0x200035b8",
+            "size": 72
+        },
+        {
+            "name": "_RTEMS_tasks_Local_table",
+            "address": "0x20001304",
+            "size": 16
+        },
+        {
+            "name": "_RTEMS_tasks_Objects",
+            "address": "0x20002a20",
+            "size": 2144
+        },
+        {
+            "name": "_RTEMS_tasks_Heads",
+            "address": "0x20003280",
+            "size": 288
+        },
+        {
+            "name": "IMFS_root_mount_data",
+            "address": "0x8012174",
+            "size": 12
+        },
+        {
+            "name": "IMFS_root_fs_info",
+            "address": "0x200013e8",
+            "size": 88
+        },
+        {
+            "name": "IMFS_root_ops",
+            "address": "0x80121b8",
+            "size": 76
+        },
+        {
+            "name": "IMFS_root_mknod_controls",
+            "address": "0x8012204",
+            "size": 16
+        },
+        {
+            "name": "_Console_simple_Node",
+            "address": "0x20000210",
+            "size": 64
+        },
+        {
+            "name": "_Console_simple_Name",
+            "address": "0x8012214",
+            "size": 8
+        },
+        {
+            "name": "_Console_simple_Node_control",
+            "address": "0x801221c",
+            "size": 16
+        },
+        {
+            "name": "_Console_simple_Handlers",
+            "address": "0x801222c",
+            "size": 64
+        },
+        {
+            "name": "deferred_released_global_locations",
+            "address": "0x20001440",
+            "size": 4
+        },
+        {
+            "name": "IMFS_dir_default_handlers",
+            "address": "0x801229c",
+            "size": 64
+        },
+        {
+            "name": "IMFS_eval_config",
+            "address": "0x80122f0",
+            "size": 8
+        },
+        {
+            "name": "IMFS_device_handlers",
+            "address": "0x80122f8",
+            "size": 64
+        },
+        {
+            "name": "IMFS_node_control_hard_link",
+            "address": "0x8012360",
+            "size": 16
+        },
+        {
+            "name": "IMFS_link_handlers",
+            "address": "0x8012370",
+            "size": 64
+        },
+        {
+            "name": "IMFS_memfile_handlers",
+            "address": "0x80123b0",
+            "size": 64
+        },
+        {
+            "name": "IMFS_node_control_sym_link",
+            "address": "0x8012404",
+            "size": 16
+        },
+        {
+            "name": "IMFS_link_handlers",
+            "address": "0x8012414",
+            "size": 64
+        },
+        {
+            "name": "_TOD_Days_per_month",
+            "address": "0x8012454",
+            "size": 104
+        },
+        {
+            "name": "config",
+            "address": "0x20001448",
+            "size": 48
+        },
+        {
+            "name": "status_code_text",
+            "address": "0x80124bc",
+            "size": 120
+        },
+        {
+            "name": "_RTEMS_Allocator_Mutex",
+            "address": "0x20000278",
+            "size": 28
+        },
+        {
+            "name": "_RTEMS_Allocator_Mutex_dup",
+            "address": "0x2000025c",
+            "size": 28
+        },
+        {
+            "name": "_TOD_Mutex",
+            "address": "0x200002b0",
+            "size": 28
+        },
+        {
+            "name": "_TOD_Mutex_dup",
+            "address": "0x20000294",
+            "size": 28
+        },
+        {
+            "name": "_Timecounter_NTP_update_second_handler",
+            "address": "0x20001480",
+            "size": 4
+        },
+        {
+            "name": "timehands",
+            "address": "0x20000300",
+            "size": 4
+        },
+        {
+            "name": "dummy_timecounter",
+            "address": "0x200002d0",
+            "size": 24
+        },
+        {
+            "name": "th0",
+            "address": "0x20000308",
+            "size": 120
+        },
+        {
+            "name": "_TLS_Allocation_size",
+            "address": "0x200014f8",
+            "size": 4
+        },
+        {
+            "name": "_TLS_Allocation_size_dup",
+            "address": "0x200014f4",
+            "size": 4
+        },
+        {
+            "name": "null_ops",
+            "address": "0x80125c8",
+            "size": 76
+        },
+        {
+            "name": "_Malloc_GC_list",
+            "address": "0x2000045c",
+            "size": 12
+        },
+        {
+            "name": "rtems_libio_mutex",
+            "address": "0x20000468",
+            "size": 28
+        },
+        {
+            "name": "filesystem_chain",
+            "address": "0x20000488",
+            "size": 12
+        },
+        {
+            "name": "DAYS_IN_MONTH",
+            "address": "0x8012678",
+            "size": 48
+        },
+        {
+            "name": "_DAYS_BEFORE_MONTH",
+            "address": "0x8012648",
+            "size": 48
+        },
+        {
+            "name": "_RTEMS_tasks_User_extensions",
+            "address": "0x20000614",
+            "size": 56
+        },
+        {
+            "name": "_Internal_Objects",
+            "address": "0x2000157c",
+            "size": 8
+        },
+        {
+            "name": "_RTEMS_Objects",
+            "address": "0x20001584",
+            "size": 44
+        },
+        {
+            "name": "_POSIX_Objects",
+            "address": "0x200015b0",
+            "size": 28
+        },
+        {
+            "name": "access_modes_assoc",
+            "address": "0x80126dc",
+            "size": 48
+        },
+        {
+            "name": "status_flags_assoc",
+            "address": "0x801270c",
+            "size": 36
+        },
+        {
+            "name": "status_code_to_errno",
+            "address": "0x8012730",
+            "size": 120
+        },
+        {
+            "name": "usart_rcc_index",
+            "address": "0x80127d0",
+            "size": 24
+        },
+        {
+            "name": "_Memory_Information",
+            "address": "0x80127f4",
+            "size": 8
+        },
+        {
+            "name": "_Memory_Areas",
+            "address": "0x200006a0",
+            "size": 12
+        },
+        {
+            "name": "test_state_strings",
+            "address": "0x80127fc",
+            "size": 20
+        },
+        {
+            "name": "fatal_source_text",
+            "address": "0x8012810",
+            "size": 60
+        },
+        {
+            "name": "internal_error_text",
+            "address": "0x801284c",
+            "size": 192
+        },
+        {
+            "name": "hex2ascii_data",
+            "address": "0x801290c",
+            "size": 32
+        },
+        {
+            "name": "rtems_filesystem_null_mt_entry",
+            "address": "0x200003d4",
+            "size": 64
+        },
+        {
+            "name": "_Region_Information",
+            "address": "0x20000584",
+            "size": 48
+        },
+        {
+            "name": "_TOD",
+            "address": "0x20001478",
+            "size": 1
+        },
+        {
+            "name": "_Thread_Control_add_ons",
+            "address": "0x801091c",
+            "size": 24
+        },
+        {
+            "name": "_Thread_Information",
+            "address": "0x20000188",
+            "size": 60
+        },
+        {
+            "name": "IMFS_LIMITS_AND_OPTIONS",
+            "address": "0x8012618",
+            "size": 48
+        },
+        {
+            "name": "_IO_Number_of_drivers",
+            "address": "0x80127a8",
+            "size": 4
+        },
+        {
+            "name": "_Workspace_Is_unified",
+            "address": "0x801219c",
+            "size": 1
+        },
+        {
+            "name": "_Watchdog_Ticks_per_timeslice",
+            "address": "0x80126d8",
+            "size": 4
+        },
+        {
+            "name": "_Linker_set__Sysinit_rtems_libio_init",
+            "address": "0x8012bac",
+            "size": 4
+        },
+        {
+            "name": "__atexit_recursive_mutex",
+            "address": "0x200019ec",
+            "size": 24
+        },
+        {
+            "name": "RTEMS_Malloc_Heap",
+            "address": "0x20001578",
+            "size": 4
+        },
+        {
+            "name": "_Timer_Information",
+            "address": "0x200005b4",
+            "size": 48
+        },
+        {
+            "name": "_Copyright_Notice",
+            "address": "0x8012bc4",
+            "size": 56
+        },
+        {
+            "name": "_Linker_set__Sysinit_rtems_initialize_data_structures",
+            "address": "0x8012ba0",
+            "size": 4
+        },
+        {
+            "name": "IMFS_mknod_control_enosys",
+            "address": "0x801234c",
+            "size": 20
+        },
+        {
+            "name": "_ISR_Stack_size_object",
+            "address": "0x80126b8",
+            "size": 4
+        },
+        {
+            "name": "_Linker_set__Sysinit__RTEMS_tasks_Manager_initialization",
+            "address": "0x8012ba4",
+            "size": 4
+        },
+        {
+            "name": "bsp_interrupt_dispatch_table",
+            "address": "0x20001604",
+            "size": 328
+        },
+        {
+            "name": "rtems_filesystem_null_handlers",
+            "address": "0x8012588",
+            "size": 64
+        },
+        {
+            "name": "_Linker_set__Sysinit_bsp_start",
+            "address": "0x8012b94",
+            "size": 4
+        },
+        {
+            "name": "_Linker_set__Sysinit__Malloc_Initialize",
+            "address": "0x8012b90",
+            "size": 4
+        },
+        {
+            "name": "_Objects_Information_table",
+            "address": "0x80126a8",
+            "size": 16
+        },
+        {
+            "name": "rtems_filesystem_global_location_null",
+            "address": "0x200003b0",
+            "size": 36
+        },
+        {
+            "name": "_User_extensions_Switches_list",
+            "address": "0x20000380",
+            "size": 12
+        },
+        {
+            "name": "stm32f4_usart_fns",
+            "address": "0x80127ac",
+            "size": 36
+        },
+        {
+            "name": "rtems_libio_iops",
+            "address": "0x20001358",
+            "size": 144
+        },
+        {
+            "name": "_User_extensions_Initial_count",
+            "address": "0x80108c8",
+            "size": 4
+        },
+        {
+            "name": "_Timecounter_Time_uptime",
+            "address": "0x200002f8",
+            "size": 8
+        },
+        {
+            "name": "_Workspace_Area",
+            "address": "0x20001508",
+            "size": 104
+        },
+        {
+            "name": "rtems_malloc_dirty_helper",
+            "address": "0x20001574",
+            "size": 4
+        },
+        {
+            "name": "_Dual_ported_memory_Information",
+            "address": "0x200004c4",
+            "size": 48
+        },
+        {
+            "name": "_Thread_Zombies",
+            "address": "0x2000038c",
+            "size": 12
+        },
+        {
+            "name": "rtems_libio_number_iops",
+            "address": "0x8012194",
+            "size": 4
+        },
+        {
+            "name": "stm32f4_start_config_gpio",
+            "address": "0x80127e8",
+            "size": 12
+        },
+        {
+            "name": "_Workspace_Malloc_initializer",
+            "address": "0x80121a0",
+            "size": 4
+        },
+        {
+            "name": "Task_name",
+            "address": "0x20001314",
+            "size": 16
+        },
+        {
+            "name": "_Semaphore_Information",
+            "address": "0x200005e4",
+            "size": 48
+        },
+        {
+            "name": "rtems_filesystem_default_pathconf",
+            "address": "0x801226c",
+            "size": 48
+        },
+        {
+            "name": "_Linker_set__Sysinit__RTEMS_tasks_Initialize_user_task",
+            "address": "0x8012bbc",
+            "size": 4
+        },
+        {
+            "name": "_User_extensions_Initial_switch_controls",
+            "address": "0x20001334",
+            "size": 36
+        },
+        {
+            "name": "_ISR_Stack_area_end",
+            "address": "0x20002a20",
+            "size": 4096
+        },
+        {
+            "name": "_Per_CPU_Information",
+            "address": "0x200014a0",
+            "size": 80
+        },
+        {
+            "name": "_User_extensions_Initial_extensions",
+            "address": "0x801085c",
+            "size": 108
+        },
+        {
+            "name": "rtems_minimum_stack_size",
+            "address": "0x2000020c",
+            "size": 4
+        },
+        {
+            "name": "memfile_blocks_allocated",
+            "address": "0x20001444",
+            "size": 4
+        },
+        {
+            "name": "_Thread_Idle_body",
+            "address": "0x80126c8",
+            "size": 4
+        },
+        {
+            "name": "Console_Port_Tbl",
+            "address": "0x200015f4",
+            "size": 4
+        },
+        {
+            "name": "_Linker_set__Sysinit__ARMV7M_Clock_initialize_early",
+            "address": "0x8012b98",
+            "size": 4
+        },
+        {
+            "name": "imfs_memfile_bytes_per_block",
+            "address": "0x8010958",
+            "size": 4
+        },
+        {
+            "name": "_Stack_Allocator_avoids_workspace",
+            "address": "0x80126bc",
+            "size": 1
+        },
+        {
+            "name": "_TOD_Hooks",
+            "address": "0x2000064c",
+            "size": 12
+        },
+        {
+            "name": "IMFS_mknod_control_device",
+            "address": "0x8012338",
+            "size": 20
+        },
+        {
+            "name": "rtems_filesystem_mount_table",
+            "address": "0x20000250",
+            "size": 12
+        },
+        {
+            "name": "_Watchdog_Nanoseconds_per_tick",
+            "address": "0x8010854",
+            "size": 4
+        },
+        {
+            "name": "rtems_test_name",
+            "address": "0x80121ac",
+            "size": 11
+        },
+        {
+            "name": "_Linker_set__Sysinit__Console_simple_Initialize",
+            "address": "0x8012bb4",
+            "size": 4
+        },
+        {
+            "name": "__atexit0",
+            "address": "0x20001858",
+            "size": 400
+        },
+        {
+            "name": "_Thread_queue_Operations_priority",
+            "address": "0x8012548",
+            "size": 20
+        },
+        {
+            "name": "_Stack_Allocator_free",
+            "address": "0x80126c4",
+            "size": 4
+        },
+        {
+            "name": "_Barrier_Information",
+            "address": "0x20000494",
+            "size": 48
+        },
+        {
+            "name": "_Thread_queue_Operations_default",
+            "address": "0x8012534",
+            "size": 20
+        },
+        {
+            "name": "IMFS_mknod_control_dir_default",
+            "address": "0x80122dc",
+            "size": 20
+        },
+        {
+            "name": "_Linker_set__Sysinit__Thread_Create_idle",
+            "address": "0x8012ba8",
+            "size": 4
+        },
+        {
+            "name": "Clock_driver_ticks",
+            "address": "0x200015cc",
+            "size": 4
+        },
+        {
+            "name": "_Thread_queue_Operations_priority_inherit",
+            "address": "0x801255c",
+            "size": 20
+        },
+        {
+            "name": "_RTEMS_tasks_Information",
+            "address": "0x200001c4",
+            "size": 60
+        },
+        {
+            "name": "imfs_memfile_ops",
+            "address": "0x20000200",
+            "size": 12
+        },
+        {
+            "name": "_Timecounter",
+            "address": "0x200002e8",
+            "size": 4
+        },
+        {
+            "name": "_Workspace_Size",
+            "address": "0x8012198",
+            "size": 4
+        },
+        {
+            "name": "rtems_libio_iop_free_tail",
+            "address": "0x20000484",
+            "size": 4
+        },
+        {
+            "name": "_Linker_set__Sysinit__User_extensions_Handler_initialization",
+            "address": "0x8012b9c",
+            "size": 4
+        },
+        {
+            "name": "rtems_termios_baud_table",
+            "address": "0x801292c",
+            "size": 312
+        },
+        {
+            "name": "__atexit",
+            "address": "0x200019e8",
+            "size": 4
+        },
+        {
+            "name": "_Watchdog_Ticks_since_boot_dup",
+            "address": "0x200014fc",
+            "size": 4
+        },
+        {
+            "name": "_Thread_Idle_stack_size",
+            "address": "0x80108cc",
+            "size": 4
+        },
+        {
+            "name": "rtems_test_printer",
+            "address": "0x200006ac",
+            "size": 8
+        },
+        {
+            "name": "bsp_interrupt_handler_unique_table",
+            "address": "0x2000174c",
+            "size": 11
+        },
+        {
+            "name": "bsp_boot_cmdline",
+            "address": "0x20001600",
+            "size": 4
+        },
+        {
+            "name": "_Thread_Maximum_TLS_size",
+            "address": "0x8010918",
+            "size": 4
+        },
+        {
+            "name": "_Linker_set__Sysinit_rtems_filesystem_initialize",
+            "address": "0x8012bb0",
+            "size": 4
+        },
+        {
+            "name": "_Linker_set__Sysinit_rtems_libio_post_driver",
+            "address": "0x8012bc0",
+            "size": 4
+        },
+        {
+            "name": "_RTEMS_tasks_User_task_table",
+            "address": "0x801093c",
+            "size": 28
+        },
+        {
+            "name": "Task_id",
+            "address": "0x20001324",
+            "size": 16
+        },
+        {
+            "name": "_Thread_Initial_thread_count",
+            "address": "0x8010938",
+            "size": 4
+        },
+        {
+            "name": "_Thread_CPU_budget_reset_timeslice",
+            "address": "0x80126cc",
+            "size": 12
+        },
+        {
+            "name": "_Message_queue_Information",
+            "address": "0x200004f4",
+            "size": 48
+        },
+        {
+            "name": "Console_Port_Minor",
+            "address": "0x200015fc",
+            "size": 4
+        },
+        {
+            "name": "Console_Port_Data",
+            "address": "0x200015f8",
+            "size": 4
+        },
+        {
+            "name": "_ISR_Stack_area_begin",
+            "address": "0x20001a20",
+            "size": 4096
+        },
+        {
+            "name": "_Thread_Control_add_on_count",
+            "address": "0x8010934",
+            "size": 4
+        },
+        {
+            "name": "_Watchdog_Ticks_since_boot",
+            "address": "0x20001500",
+            "size": 4
+        },
+        {
+            "name": "_Watchdog_Microseconds_per_tick",
+            "address": "0x8010850",
+            "size": 4
+        },
+        {
+            "name": "BSP_output_char",
+            "address": "0x2000069c",
+            "size": 4
+        },
+        {
+            "name": "_Linker_set__Sysinit__Clock_Initialize",
+            "address": "0x8012bb8",
+            "size": 4
+        },
+        {
+            "name": "rtems_filesystem_table",
+            "address": "0x8012164",
+            "size": 16
+        },
+        {
+            "name": "_Thread_Global_constructor",
+            "address": "0x200014f0",
+            "size": 4
+        },
+        {
+            "name": "_Linker_set__Sysinit__Workspace_Handler_initialization",
+            "address": "0x8012b8c",
+            "size": 4
+        },
+        {
+            "name": "_ARMV7M_TC",
+            "address": "0x200015d0",
+            "size": 32
+        },
+        {
+            "name": "_System_state_Current",
+            "address": "0x2000147c",
+            "size": 4
+        },
+        {
+            "name": "rtems_termios_linesw",
+            "address": "0x20001758",
+            "size": 256
+        },
+        {
+            "name": "BSP_poll_char",
+            "address": "0x200015f0",
+            "size": 4
+        },
+        {
+            "name": "_ctype_",
+            "address": "0x8012a64",
+            "size": 257
+        },
+        {
+            "name": "rtems_libio_iop_free_head",
+            "address": "0x20001570",
+            "size": 4
+        },
+        {
+            "name": "_Stack_Space_size",
+            "address": "0x80121a4",
+            "size": 4
+        },
+        {
+            "name": "_Partition_Information",
+            "address": "0x20000524",
+            "size": 48
+        },
+        {
+            "name": "Console_Configuration_Ports",
+            "address": "0x20000658",
+            "size": 68
+        },
+        {
+            "name": "_Timecounter_Time_second",
+            "address": "0x200002f0",
+            "size": 8
+        },
+        {
+            "name": "_Stack_Allocator_allocate",
+            "address": "0x80126c0",
+            "size": 4
+        },
+        {
+            "name": "rtems_global_user_env",
+            "address": "0x20000414",
+            "size": 72
+        },
+        {
+            "name": "_Watchdog_Ticks_per_second",
+            "address": "0x8010858",
+            "size": 4
+        },
+        {
+            "name": "_User_extensions_List",
+            "address": "0x20000398",
+            "size": 24
+        },
+        {
+            "name": "rtems_filesystem_root_configuration",
+            "address": "0x8012180",
+            "size": 20
+        },
+        {
+            "name": "_Rate_monotonic_Information",
+            "address": "0x20000554",
+            "size": 48
+        },
+        {
+            "name": "rtems_malloc_extend_handler",
+            "address": "0x8012614",
+            "size": 4
+        },
+        {
+            "name": "_Stack_Allocator_allocate_for_idle",
+            "address": "0x80121a8",
+            "size": 4
+        },
+        {
+            "name": "_Scheduler_Table",
+            "address": "0x80108d0",
+            "size": 72
+        },
+        {
+            "name": "_TLS_Configuration",
+            "address": "0x8012570",
+            "size": 24
+        },
+        {
+            "name": "IMFS_mknod_control_memfile",
+            "address": "0x80123f0",
+            "size": 20
+        }
+    ]
+}
