@@ -354,10 +354,64 @@
   {
     "batch_id": 33,
     "file": "batch_033.gdb",
-    "guard_count": 2,
+    "guard_count": 4,
     "guard_ids": [
       129,
-      130
+      130,
+      131,
+      132
+    ]
+  },
+  {
+    "batch_id": 34,
+    "file": "batch_034.gdb",
+    "guard_count": 4,
+    "guard_ids": [
+      133,
+      134,
+      135,
+      136
+    ]
+  },
+  {
+    "batch_id": 35,
+    "file": "batch_035.gdb",
+    "guard_count": 4,
+    "guard_ids": [
+      137,
+      138,
+      139,
+      140
+    ]
+  },
+  {
+    "batch_id": 36,
+    "file": "batch_036.gdb",
+    "guard_count": 4,
+    "guard_ids": [
+      141,
+      142,
+      143,
+      144
+    ]
+  },
+  {
+    "batch_id": 37,
+    "file": "batch_037.gdb",
+    "guard_count": 4,
+    "guard_ids": [
+      145,
+      146,
+      147,
+      148
+    ]
+  },
+  {
+    "batch_id": 38,
+    "file": "batch_038.gdb",
+    "guard_count": 1,
+    "guard_ids": [
+      149
     ]
   }
 ]

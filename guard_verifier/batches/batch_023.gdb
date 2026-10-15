@@ -3,46 +3,50 @@ set confirm off
 target remote :4242
 load
 
-break *0x0800ae70
+set $hit_89 = 0
+set $hit_90 = 0
+set $hit_91 = 0
+set $hit_92 = 0
+
+break *0x080103aa
 commands
   silent
   set $hit_89 = $hit_89 + 1
+  if $hit_89 >= 5
+    disable 1
+  end
   continue
 end
-set $hit_89 = 0
 
-break *0x0800af70
+break *0x0801068c
 commands
   silent
   set $hit_90 = $hit_90 + 1
-  continue
-end
-set $hit_90 = 0
-
-break *0x0800b272
-commands
-  silent
   set $hit_91 = $hit_91 + 1
+  if $hit_90 >= 5
+    disable 2
+  end
   continue
 end
-set $hit_91 = 0
 
-break *0x0800b34a
+break *0x080107e8
 commands
   silent
   set $hit_92 = $hit_92 + 1
+  if $hit_92 >= 5
+    disable 3
+  end
   continue
 end
-set $hit_92 = 0
 
 break bsp_reset
 commands
   silent
   printf "=== GUARD VERIFICATION RESULTS ===\n"
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 89, "RASM", "THREAD_LIFECYCLE", "_Thread_queue_Priority_inherit_enqueue", "0x0800ae70", $hit_89
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 90, "RASM", "THREAD_LIFECYCLE", "_Thread_queue_Priority_inherit_extract", "0x0800af70", $hit_90
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 91, "RASM", "THREAD_LIFECYCLE", "_Thread_queue_Priority_inherit_surrender", "0x0800b272", $hit_91
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 92, "RASM", "THREAD_LIFECYCLE", "_Thread_Kill_zombies", "0x0800b34a", $hit_92
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 89, "RASM", "THREAD_LIFECYCLE", "_User_extensions_Thread_terminate_visitor", "0x080103aa", $hit_89
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 90, "RASM", "USER_EXTENSIONS", "_User_extensions_Iterate", "0x0801068c", $hit_90
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 91, "EDDI", "USER_EXTENSIONS", "_User_extensions_Iterate", "0x0801068c", $hit_91
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 92, "RASM", "WATCHDOG_TIMERS", "_Watchdog_Insert", "0x080107e8", $hit_92
   printf "=== END GUARD VERIFICATION ===\n"
   quit
 end

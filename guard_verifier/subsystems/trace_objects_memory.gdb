@@ -3,154 +3,155 @@ set confirm off
 target remote :4242
 load
 
-break *0x08004664
+set $hit_108 = 0
+set $hit_109 = 0
+set $hit_115 = 0
+set $hit_116 = 0
+set $hit_117 = 0
+set $hit_118 = 0
+set $hit_138 = 0
+set $hit_139 = 0
+set $hit_140 = 0
+set $hit_141 = 0
+set $hit_146 = 0
+set $hit_149 = 0
+
+break *0x080126e8
 commands
   silent
-  set $hit_2 = $hit_2 + 1
+  set $hit_108 = $hit_108 + 1
+  if $hit_108 >= 5
+    disable 1
+  end
   continue
 end
-set $hit_2 = 0
 
-break *0x08004c7a
-commands
-  silent
-  set $hit_4 = $hit_4 + 1
-  continue
-end
-set $hit_4 = 0
-
-break *0x08004caa
-commands
-  silent
-  set $hit_5 = $hit_5 + 1
-  continue
-end
-set $hit_5 = 0
-
-break *0x08008488
-commands
-  silent
-  set $hit_54 = $hit_54 + 1
-  continue
-end
-set $hit_54 = 0
-
-break *0x08008786
-commands
-  silent
-  set $hit_58 = $hit_58 + 1
-  continue
-end
-set $hit_58 = 0
-
-break *0x080087d6
-commands
-  silent
-  set $hit_59 = $hit_59 + 1
-  continue
-end
-set $hit_59 = 0
-
-break *0x08008810
-commands
-  silent
-  set $hit_60 = $hit_60 + 1
-  continue
-end
-set $hit_60 = 0
-
-break *0x0800c650
+break *0x080129b4
 commands
   silent
   set $hit_109 = $hit_109 + 1
+  if $hit_109 >= 5
+    disable 2
+  end
   continue
 end
-set $hit_109 = 0
 
-break *0x0800c7c8
-commands
-  silent
-  set $hit_110 = $hit_110 + 1
-  continue
-end
-set $hit_110 = 0
-
-break *0x0800c8f2
-commands
-  silent
-  set $hit_111 = $hit_111 + 1
-  continue
-end
-set $hit_111 = 0
-
-break *0x0800cb84
-commands
-  silent
-  set $hit_112 = $hit_112 + 1
-  continue
-end
-set $hit_112 = 0
-
-break *0x0800cd48
-commands
-  silent
-  set $hit_113 = $hit_113 + 1
-  continue
-end
-set $hit_113 = 0
-
-break *0x0800cd7e
-commands
-  silent
-  set $hit_114 = $hit_114 + 1
-  continue
-end
-set $hit_114 = 0
-
-break *0x0800cda0
+break *0x08012d1a
 commands
   silent
   set $hit_115 = $hit_115 + 1
+  if $hit_115 >= 5
+    disable 3
+  end
   continue
 end
-set $hit_115 = 0
 
-break *0x0800d05a
+break *0x08012d3c
 commands
   silent
   set $hit_116 = $hit_116 + 1
+  if $hit_116 >= 5
+    disable 4
+  end
   continue
 end
-set $hit_116 = 0
 
-break *0x08012136
+break *0x0801302a
 commands
   silent
-  set $hit_130 = $hit_130 + 1
+  set $hit_117 = $hit_117 + 1
+  if $hit_117 >= 5
+    disable 5
+  end
   continue
 end
-set $hit_130 = 0
+
+break *0x08013064
+commands
+  silent
+  set $hit_118 = $hit_118 + 1
+  if $hit_118 >= 5
+    disable 6
+  end
+  continue
+end
+
+break *0x08015c98
+commands
+  silent
+  set $hit_138 = $hit_138 + 1
+  if $hit_138 >= 5
+    disable 7
+  end
+  continue
+end
+
+break *0x08015e10
+commands
+  silent
+  set $hit_139 = $hit_139 + 1
+  if $hit_139 >= 5
+    disable 8
+  end
+  continue
+end
+
+break *0x08015f3a
+commands
+  silent
+  set $hit_140 = $hit_140 + 1
+  if $hit_140 >= 5
+    disable 9
+  end
+  continue
+end
+
+break *0x080160fc
+commands
+  silent
+  set $hit_141 = $hit_141 + 1
+  if $hit_141 >= 5
+    disable 10
+  end
+  continue
+end
+
+break *0x08025118
+commands
+  silent
+  set $hit_146 = $hit_146 + 1
+  if $hit_146 >= 5
+    disable 11
+  end
+  continue
+end
+
+break *0x0802583a
+commands
+  silent
+  set $hit_149 = $hit_149 + 1
+  if $hit_149 >= 5
+    disable 12
+  end
+  continue
+end
 
 break bsp_reset
 commands
   silent
   printf "=== GUARD VERIFICATION RESULTS ===\n"
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 2, "RASM", "OBJECTS_MEMORY", "_Chain_Initialize", "0x08004664", $hit_2
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 4, "RASM", "OBJECTS_MEMORY", "_Objects_Allocate_static", "0x08004c7a", $hit_4
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 5, "RASM", "OBJECTS_MEMORY", "_Objects_Free_static", "0x08004caa", $hit_5
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 54, "RASM", "OBJECTS_MEMORY", "_Heap_Allocate_aligned_with_boundary", "0x08008488", $hit_54
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 58, "RASM", "OBJECTS_MEMORY", "_Objects_Get", "0x08008786", $hit_58
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 59, "RASM", "OBJECTS_MEMORY", "_Protected_heap_Free", "0x080087d6", $hit_59
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 60, "RASM", "OBJECTS_MEMORY", "_Protected_heap_Get_free_information", "0x08008810", $hit_60
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 109, "RASM", "OBJECTS_MEMORY", "_Heap_Initialize", "0x0800c650", $hit_109
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 110, "RASM", "OBJECTS_MEMORY", "_Heap_Block_allocate", "0x0800c7c8", $hit_110
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 111, "RASM", "OBJECTS_MEMORY", "_Heap_Block_split", "0x0800c8f2", $hit_111
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 112, "RASM", "OBJECTS_MEMORY", "_Heap_Free", "0x0800cb84", $hit_112
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 113, "RASM", "OBJECTS_MEMORY", "_Heap_Get_free_information", "0x0800cd48", $hit_113
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 114, "RASM", "OBJECTS_MEMORY", "_Objects_Close", "0x0800cd7e", $hit_114
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 115, "RASM", "OBJECTS_MEMORY", "_Objects_Free_nothing", "0x0800cda0", $hit_115
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 116, "RASM", "OBJECTS_MEMORY", "_Objects_Initialize_information", "0x0800d05a", $hit_116
-  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 130, "RASM", "OBJECTS_MEMORY", "_Objects_Name_to_string", "0x08012136", $hit_130
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 108, "RASM", "OBJECTS_MEMORY", "_Heap_Allocate_aligned_with_boundary", "0x080126e8", $hit_108
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 109, "RASM", "OBJECTS_MEMORY", "_Heap_Free", "0x080129b4", $hit_109
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 115, "RASM", "OBJECTS_MEMORY", "_Objects_Close", "0x08012d1a", $hit_115
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 116, "RASM", "OBJECTS_MEMORY", "_Objects_Free_nothing", "0x08012d3c", $hit_116
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 117, "RASM", "OBJECTS_MEMORY", "_Protected_heap_Free", "0x0801302a", $hit_117
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 118, "RASM", "OBJECTS_MEMORY", "_Protected_heap_Get_free_information", "0x08013064", $hit_118
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 138, "RASM", "OBJECTS_MEMORY", "_Heap_Initialize", "0x08015c98", $hit_138
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 139, "RASM", "OBJECTS_MEMORY", "_Heap_Block_allocate", "0x08015e10", $hit_139
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 140, "RASM", "OBJECTS_MEMORY", "_Heap_Block_split", "0x08015f3a", $hit_140
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 141, "RASM", "OBJECTS_MEMORY", "_Heap_Get_free_information", "0x080160fc", $hit_141
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 146, "RASM", "OBJECTS_MEMORY", "_Heap_Resize_block", "0x08025118", $hit_146
+  printf "GUARD_%03d [%s] [%s] %s check=%s: %d hits\n", 149, "RASM", "OBJECTS_MEMORY", "_Objects_Name_to_string", "0x0802583a", $hit_149
   printf "=== END GUARD VERIFICATION ===\n"
   quit
 end

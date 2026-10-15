@@ -80,13 +80,27 @@ def write_single_gdb_script(guards, output_path, is_batch=False, target_remote=N
         f.write("load\n\n")
 
         for g in guards:
-            f.write(f"break *{g['check_address']}\n")
+            f.write(f"set $hit_{g['id']} = 0\n")
+        f.write("\n")
+
+        addr_map = {}
+        for g in guards:
+            addr_map.setdefault(g["check_address"], []).append(g)
+
+        bp_idx = 1
+        for addr, glist in addr_map.items():
+            f.write(f"break *{addr}\n")
             f.write("commands\n")
             f.write("  silent\n")
-            f.write(f"  set $hit_{g['id']} = $hit_{g['id']} + 1\n")
+            for g in glist:
+                f.write(f"  set $hit_{g['id']} = $hit_{g['id']} + 1\n")
+            primary_id = glist[0]["id"]
+            f.write(f"  if $hit_{primary_id} >= 5\n")
+            f.write(f"    disable {bp_idx}\n")
+            f.write("  end\n")
             f.write("  continue\n")
-            f.write("end\n")
-            f.write(f"set $hit_{g['id']} = 0\n\n")
+            f.write("end\n\n")
+            bp_idx += 1
 
         f.write("break bsp_reset\n")
         f.write("commands\n")

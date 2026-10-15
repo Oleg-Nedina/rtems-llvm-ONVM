@@ -13,7 +13,7 @@ def resolve_gdb_binary():
             return alt
     return candidate
 
-def run_batch(gdb_bin, gdb_script, elf_path, timeout=30):
+def run_batch(gdb_bin, gdb_script, elf_path, timeout=60):
     cmd = [
         gdb_bin,
         "-batch",
@@ -45,7 +45,7 @@ def main():
         sys.exit(1)
 
     gdb_bin = resolve_gdb_binary()
-    timeout_sec = int(os.environ.get("GDB_TIMEOUT", "30"))
+    timeout_sec = int(os.environ.get("GDB_TIMEOUT", "60"))
 
     with open(manifest_path, "r", encoding="utf-8") as f:
         manifest = json.load(f)

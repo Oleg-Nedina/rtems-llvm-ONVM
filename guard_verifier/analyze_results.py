@@ -92,12 +92,27 @@ def generate_markdown_report(results, output_path, catalog_total=None):
             f.write(f"| `{sub_name}` | {len(sub_list)} | {len(sub_act)} | {len(sub_act)/len(sub_list)*100:.1f}% |\n")
         f.write("\n")
 
-        f.write("## 3. Top Guard Points per Frequenza di Esecuzione\n\n")
+        f.write("## 3. Elenco Completo Guard Points Attivi\n\n")
         f.write("| ID | Tipo | Sottosistema | Funzione | Indirizzo Check | Esecuzioni Effettive |\n")
         f.write("|---|---|---|---|---|---|\n")
         sorted_active = sorted(active, key=lambda x: x["hits"], reverse=True)
-        for r in sorted_active[:25]:
+        for r in sorted_active:
             f.write(f"| {r['id']} | `{r['type']}` | `{r.get('subsystem', 'N/A')}` | `{r['function']}` | `{r['check_address']}` | **{r['hits']}** |\n")
+        f.write("\n")
+
+        f.write("## 4. Elenco Completo Guard Points Dormienti\n\n")
+        f.write("| ID | Tipo | Sottosistema | Funzione | Indirizzo Check | Stato |\n")
+        f.write("|---|---|---|---|---|---|\n")
+        for r in sorted(dormant, key=lambda x: x["id"]):
+            f.write(f"| {r['id']} | `{r['type']}` | `{r.get('subsystem', 'N/A')}` | `{r['function']}` | `{r['check_address']}` | Inattivo (0 hit) |\n")
+        f.write("\n")
+
+        f.write("## 5. Dettaglio Guardie EDDI (Data-Flow Integrity)\n\n")
+        f.write("| ID | Sottosistema | Funzione | Indirizzo Check | Esecuzioni | Condizione di Attivazione |\n")
+        f.write("|---|---|---|---|---|---|\n")
+        for r in sorted(eddi_total, key=lambda x: x["id"]):
+            note = "Eseguito a runtime" if r["hits"] > 0 else "Richiede Multi-Tasking / Context Switch / Thread Join"
+            f.write(f"| {r['id']} | `{r.get('subsystem', 'N/A')}` | `{r['function']}` | `{r['check_address']}` | **{r['hits']}** | {note} |\n")
         f.write("\n")
 
 def generate_csv_export(results, output_path):
