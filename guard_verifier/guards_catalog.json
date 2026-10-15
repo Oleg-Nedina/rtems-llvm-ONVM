@@ -1,0 +1,1172 @@
+[
+  {
+    "id": 1,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "rtems_task_start",
+    "subsystem": "CLASSIC_API",
+    "check_address": "0x08004452",
+    "trap_address": "0x0800445c"
+  },
+  {
+    "id": 2,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Chain_Initialize",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x08004664",
+    "trap_address": "0x08004672"
+  },
+  {
+    "id": 3,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_User_extensions_Fatal",
+    "subsystem": "USER_EXTENSIONS",
+    "check_address": "0x080046c6",
+    "trap_address": "0x080046d0"
+  },
+  {
+    "id": 4,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Objects_Allocate_static",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x08004c7a",
+    "trap_address": "0x08004c84"
+  },
+  {
+    "id": 5,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Objects_Free_static",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x08004caa",
+    "trap_address": "0x08004cb4"
+  },
+  {
+    "id": 6,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Scheduler_default_Map_priority",
+    "subsystem": "SCHEDULER",
+    "check_address": "0x08004ccc",
+    "trap_address": "0x08004ce0"
+  },
+  {
+    "id": 7,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Scheduler_default_Unmap_priority",
+    "subsystem": "SCHEDULER",
+    "check_address": "0x08004cfa",
+    "trap_address": "0x08004d0c"
+  },
+  {
+    "id": 8,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Scheduler_default_Node_destroy",
+    "subsystem": "SCHEDULER",
+    "check_address": "0x08004d24",
+    "trap_address": "0x08004d2e"
+  },
+  {
+    "id": 9,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Scheduler_default_Release_job",
+    "subsystem": "SCHEDULER",
+    "check_address": "0x08004d48",
+    "trap_address": "0x08004d52"
+  },
+  {
+    "id": 10,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Scheduler_default_Cancel_job",
+    "subsystem": "SCHEDULER",
+    "check_address": "0x08004d6e",
+    "trap_address": "0x08004d78"
+  },
+  {
+    "id": 11,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Scheduler_default_Start_idle",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08004d9e",
+    "trap_address": "0x08004da8"
+  },
+  {
+    "id": 12,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Scheduler_priority_Initialize",
+    "subsystem": "SCHEDULER",
+    "check_address": "0x08005146",
+    "trap_address": "0x08005154"
+  },
+  {
+    "id": 13,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Scheduler_priority_Node_initialize",
+    "subsystem": "SCHEDULER",
+    "check_address": "0x080051bc",
+    "trap_address": "0x080051c6"
+  },
+  {
+    "id": 14,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Scheduler_priority_Block",
+    "subsystem": "SCHEDULER",
+    "check_address": "0x080052fc",
+    "trap_address": "0x0800530a"
+  },
+  {
+    "id": 15,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Scheduler_priority_Update_priority",
+    "subsystem": "SCHEDULER",
+    "check_address": "0x080055c8",
+    "trap_address": "0x080055d6"
+  },
+  {
+    "id": 16,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Scheduler_priority_Schedule",
+    "subsystem": "SCHEDULER",
+    "check_address": "0x080056f0",
+    "trap_address": "0x080056fe"
+  },
+  {
+    "id": 17,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Scheduler_priority_Unblock",
+    "subsystem": "SCHEDULER",
+    "check_address": "0x080058da",
+    "trap_address": "0x080058e8"
+  },
+  {
+    "id": 18,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Scheduler_priority_Yield",
+    "subsystem": "SCHEDULER",
+    "check_address": "0x080059f0",
+    "trap_address": "0x080059fe"
+  },
+  {
+    "id": 19,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Stack_Allocator_allocate_for_idle_workspace",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08005a3a",
+    "trap_address": "0x08005a44"
+  },
+  {
+    "id": 20,
+    "type": "EDDI",
+    "handler": "DataCorruption_Handler",
+    "function": "_Thread_Do_dispatch",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08005b58",
+    "trap_address": "0x08005b70"
+  },
+  {
+    "id": 21,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Entry_adaptor_numeric",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08005be2",
+    "trap_address": "0x08005bec"
+  },
+  {
+    "id": 22,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Get",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08005cc4",
+    "trap_address": "0x08005cd2"
+  },
+  {
+    "id": 23,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_User_extensions_Thread_begin_dup",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08005d74",
+    "trap_address": "0x08005d7e"
+  },
+  {
+    "id": 24,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_User_extensions_Thread_exitted_dup",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08005db8",
+    "trap_address": "0x08005dc2"
+  },
+  {
+    "id": 25,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Set_state_locked",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08005e2e",
+    "trap_address": "0x08005e3a"
+  },
+  {
+    "id": 26,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Set_state",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08005eae",
+    "trap_address": "0x08005eba"
+  },
+  {
+    "id": 27,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Start",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08005f6a",
+    "trap_address": "0x08005f7a"
+  },
+  {
+    "id": 28,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Continue",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08006074",
+    "trap_address": "0x08006082"
+  },
+  {
+    "id": 29,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Timeout",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x080060a8",
+    "trap_address": "0x080060b2"
+  },
+  {
+    "id": 30,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Yield",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08006124",
+    "trap_address": "0x0800612e"
+  },
+  {
+    "id": 31,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_User_extensions_Handler_initialization",
+    "subsystem": "USER_EXTENSIONS",
+    "check_address": "0x080064f4",
+    "trap_address": "0x08006502"
+  },
+  {
+    "id": 32,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_User_extensions_Thread_create_visitor",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08006576",
+    "trap_address": "0x08006580"
+  },
+  {
+    "id": 33,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_User_extensions_Thread_delete_visitor",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x080065c6",
+    "trap_address": "0x080065d0"
+  },
+  {
+    "id": 34,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_User_extensions_Thread_start_visitor",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08006616",
+    "trap_address": "0x08006620"
+  },
+  {
+    "id": 35,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_User_extensions_Thread_restart_visitor",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08006666",
+    "trap_address": "0x08006670"
+  },
+  {
+    "id": 36,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_User_extensions_Thread_begin_visitor",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x080066b2",
+    "trap_address": "0x080066bc"
+  },
+  {
+    "id": 37,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_User_extensions_Thread_exitted_visitor",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x080066fe",
+    "trap_address": "0x08006708"
+  },
+  {
+    "id": 38,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_User_extensions_Fatal_visitor",
+    "subsystem": "USER_EXTENSIONS",
+    "check_address": "0x08006750",
+    "trap_address": "0x0800675a"
+  },
+  {
+    "id": 39,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_User_extensions_Thread_terminate_visitor",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800679e",
+    "trap_address": "0x080067a8"
+  },
+  {
+    "id": 40,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_User_extensions_Iterate",
+    "subsystem": "USER_EXTENSIONS",
+    "check_address": "0x08006a80",
+    "trap_address": "0x08006a8e"
+  },
+  {
+    "id": 41,
+    "type": "EDDI",
+    "handler": "DataCorruption_Handler",
+    "function": "_User_extensions_Iterate",
+    "subsystem": "USER_EXTENSIONS",
+    "check_address": "0x08006a80",
+    "trap_address": "0x08006a92"
+  },
+  {
+    "id": 42,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Watchdog_Insert",
+    "subsystem": "WATCHDOG_TIMERS",
+    "check_address": "0x08006bdc",
+    "trap_address": "0x08006bea"
+  },
+  {
+    "id": 43,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Watchdog_Tick",
+    "subsystem": "WATCHDOG_TIMERS",
+    "check_address": "0x08006eb8",
+    "trap_address": "0x08006ec6"
+  },
+  {
+    "id": 44,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Workspace_Allocate",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x08006f08",
+    "trap_address": "0x08006f18"
+  },
+  {
+    "id": 45,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Workspace_Malloc_initialize_unified",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x08006f30",
+    "trap_address": "0x08006f42"
+  },
+  {
+    "id": 46,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "rtems_task_create",
+    "subsystem": "CLASSIC_API",
+    "check_address": "0x08007f34",
+    "trap_address": "0x08007f3e"
+  },
+  {
+    "id": 47,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_RTEMS_tasks_Allocate_and_prepare_stack",
+    "subsystem": "CLASSIC_API",
+    "check_address": "0x08007fa0",
+    "trap_address": "0x08007fae"
+  },
+  {
+    "id": 48,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "rtems_initialize_data_structures",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x08007fe4",
+    "trap_address": "0x08007fee"
+  },
+  {
+    "id": 49,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "rtems_initialize_executive",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x08008058",
+    "trap_address": "0x08008070"
+  },
+  {
+    "id": 50,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_RTEMS_Lock_allocator",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x0800809c",
+    "trap_address": "0x080080a6"
+  },
+  {
+    "id": 51,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_RTEMS_Unlock_allocator",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x080080d6",
+    "trap_address": "0x080080e0"
+  },
+  {
+    "id": 52,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_API_Mutex_Lock",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x08008134",
+    "trap_address": "0x0800813e"
+  },
+  {
+    "id": 53,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_API_Mutex_Unlock",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x0800818c",
+    "trap_address": "0x08008196"
+  },
+  {
+    "id": 54,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Heap_Allocate_aligned_with_boundary",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x08008488",
+    "trap_address": "0x08008498"
+  },
+  {
+    "id": 55,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_ISR_Handler_initialization",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x08008508",
+    "trap_address": "0x08008512"
+  },
+  {
+    "id": 56,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Mutex_recursive_Acquire",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x08008584",
+    "trap_address": "0x08008592"
+  },
+  {
+    "id": 57,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Mutex_recursive_Release",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x080086ae",
+    "trap_address": "0x080086bc"
+  },
+  {
+    "id": 58,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Objects_Get",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x08008786",
+    "trap_address": "0x08008792"
+  },
+  {
+    "id": 59,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Protected_heap_Free",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x080087d6",
+    "trap_address": "0x080087e2"
+  },
+  {
+    "id": 60,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Protected_heap_Get_free_information",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x08008810",
+    "trap_address": "0x0800881c"
+  },
+  {
+    "id": 61,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_RBTree_Extract",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x080089f2",
+    "trap_address": "0x08008a00"
+  },
+  {
+    "id": 62,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_RBTree_Insert_color",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x080091e4",
+    "trap_address": "0x080091f2"
+  },
+  {
+    "id": 63,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Scheduler_Handler_initialization",
+    "subsystem": "SCHEDULER",
+    "check_address": "0x08009230",
+    "trap_address": "0x0800923a"
+  },
+  {
+    "id": 64,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Initialize_information",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800926a",
+    "trap_address": "0x08009274"
+  },
+  {
+    "id": 65,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Handler_initialization",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x080092d2",
+    "trap_address": "0x080092e0"
+  },
+  {
+    "id": 66,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Priority_perform_actions",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800935c",
+    "trap_address": "0x0800936a"
+  },
+  {
+    "id": 67,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Priority_do_perform_actions",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x080097b4",
+    "trap_address": "0x080097c2"
+  },
+  {
+    "id": 68,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Priority_update",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08009862",
+    "trap_address": "0x08009870"
+  },
+  {
+    "id": 69,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Clear_state_locked",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x080098fc",
+    "trap_address": "0x08009906"
+  },
+  {
+    "id": 70,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Clear_state",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x080099a6",
+    "trap_address": "0x080099b4"
+  },
+  {
+    "id": 71,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Create_idle",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08009b7c",
+    "trap_address": "0x08009b8a"
+  },
+  {
+    "id": 72,
+    "type": "EDDI",
+    "handler": "DataCorruption_Handler",
+    "function": "_Thread_Create_idle",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08009b7c",
+    "trap_address": "0x08009b98"
+  },
+  {
+    "id": 73,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Entry_adaptor_idle",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08009bb8",
+    "trap_address": "0x08009bc2"
+  },
+  {
+    "id": 74,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Free",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08009cd6",
+    "trap_address": "0x08009ce4"
+  },
+  {
+    "id": 75,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Initialize",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800a114",
+    "trap_address": "0x0800a124"
+  },
+  {
+    "id": 76,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Load_environment",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800a1a4",
+    "trap_address": "0x0800a1ae"
+  },
+  {
+    "id": 77,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Enqueue_do_nothing_extra",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800a1f8",
+    "trap_address": "0x0800a202"
+  },
+  {
+    "id": 78,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Enqueue",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800a3ae",
+    "trap_address": "0x0800a3bc"
+  },
+  {
+    "id": 79,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Extract_locked",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800a412",
+    "trap_address": "0x0800a422"
+  },
+  {
+    "id": 80,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Surrender",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800a4e2",
+    "trap_address": "0x0800a4f0"
+  },
+  {
+    "id": 81,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Surrender_no_priority",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800a5ea",
+    "trap_address": "0x0800a5f8"
+  },
+  {
+    "id": 82,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Do_nothing_priority_actions",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800a614",
+    "trap_address": "0x0800a61e"
+  },
+  {
+    "id": 83,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Priority_priority_actions",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800a76c",
+    "trap_address": "0x0800a77a"
+  },
+  {
+    "id": 84,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Priority_enqueue",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800a910",
+    "trap_address": "0x0800a91e"
+  },
+  {
+    "id": 85,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Priority_extract",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800a98e",
+    "trap_address": "0x0800a998"
+  },
+  {
+    "id": 86,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Priority_surrender",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800aa10",
+    "trap_address": "0x0800aa20"
+  },
+  {
+    "id": 87,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Priority_first",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800aa46",
+    "trap_address": "0x0800aa50"
+  },
+  {
+    "id": 88,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Priority_inherit_priority_actions",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800ac0a",
+    "trap_address": "0x0800ac18"
+  },
+  {
+    "id": 89,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Priority_inherit_enqueue",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800ae70",
+    "trap_address": "0x0800ae7e"
+  },
+  {
+    "id": 90,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Priority_inherit_extract",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800af70",
+    "trap_address": "0x0800af7e"
+  },
+  {
+    "id": 91,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Priority_inherit_surrender",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800b272",
+    "trap_address": "0x0800b282"
+  },
+  {
+    "id": 92,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Kill_zombies",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800b34a",
+    "trap_address": "0x0800b358"
+  },
+  {
+    "id": 93,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Set_life_protection",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800b448",
+    "trap_address": "0x0800b454"
+  },
+  {
+    "id": 94,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Wait_for_join_dup",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800b572",
+    "trap_address": "0x0800b57a"
+  },
+  {
+    "id": 95,
+    "type": "EDDI",
+    "handler": "DataCorruption_Handler",
+    "function": "_Thread_Wait_for_join_dup",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800b572",
+    "trap_address": "0x0800b57e"
+  },
+  {
+    "id": 96,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Change_life_locked_dup",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800b6e4",
+    "trap_address": "0x0800b6f2"
+  },
+  {
+    "id": 97,
+    "type": "EDDI",
+    "handler": "DataCorruption_Handler",
+    "function": "_Thread_Change_life_locked_dup",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800b6e4",
+    "trap_address": "0x0800b6f6"
+  },
+  {
+    "id": 98,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Make_zombie_dup",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800b806",
+    "trap_address": "0x0800b814"
+  },
+  {
+    "id": 99,
+    "type": "EDDI",
+    "handler": "DataCorruption_Handler",
+    "function": "_Thread_Life_action_handler_dup",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800b988",
+    "trap_address": "0x0800b9a8"
+  },
+  {
+    "id": 100,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Life_action_handler_dup",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800b988",
+    "trap_address": "0x0800b9ac"
+  },
+  {
+    "id": 101,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_User_extensions_Destroy_iterators_dup",
+    "subsystem": "USER_EXTENSIONS",
+    "check_address": "0x0800bba2",
+    "trap_address": "0x0800bbb0"
+  },
+  {
+    "id": 102,
+    "type": "EDDI",
+    "handler": "DataCorruption_Handler",
+    "function": "_User_extensions_Destroy_iterators_dup",
+    "subsystem": "USER_EXTENSIONS",
+    "check_address": "0x0800bba2",
+    "trap_address": "0x0800bbb4"
+  },
+  {
+    "id": 103,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Join_flush_filter_dup",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800bbe2",
+    "trap_address": "0x0800bbee"
+  },
+  {
+    "id": 104,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Stack_Allocate",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x0800bc24",
+    "trap_address": "0x0800bc2e"
+  },
+  {
+    "id": 105,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Stack_Free",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x0800bc54",
+    "trap_address": "0x0800bc5e"
+  },
+  {
+    "id": 106,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_TLS_Get_allocation_size",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800bdce",
+    "trap_address": "0x0800bdd8"
+  },
+  {
+    "id": 107,
+    "type": "EDDI",
+    "handler": "DataCorruption_Handler",
+    "function": "_TLS_Get_allocation_size",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800bdce",
+    "trap_address": "0x0800bddc"
+  },
+  {
+    "id": 108,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Watchdog_Remove",
+    "subsystem": "WATCHDOG_TIMERS",
+    "check_address": "0x0800be72",
+    "trap_address": "0x0800be7c"
+  },
+  {
+    "id": 109,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Heap_Initialize",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x0800c650",
+    "trap_address": "0x0800c660"
+  },
+  {
+    "id": 110,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Heap_Block_allocate",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x0800c7c8",
+    "trap_address": "0x0800c7d8"
+  },
+  {
+    "id": 111,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Heap_Block_split",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x0800c8f2",
+    "trap_address": "0x0800c900"
+  },
+  {
+    "id": 112,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Heap_Free",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x0800cb84",
+    "trap_address": "0x0800cb94"
+  },
+  {
+    "id": 113,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Heap_Get_free_information",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x0800cd48",
+    "trap_address": "0x0800cd56"
+  },
+  {
+    "id": 114,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Objects_Close",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x0800cd7e",
+    "trap_address": "0x0800cd88"
+  },
+  {
+    "id": 115,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Objects_Free_nothing",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x0800cda0",
+    "trap_address": "0x0800cdaa"
+  },
+  {
+    "id": 116,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Objects_Initialize_information",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x0800d05a",
+    "trap_address": "0x0800d068"
+  },
+  {
+    "id": 117,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_RBTree_Minimum",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x0800d110",
+    "trap_address": "0x0800d11c"
+  },
+  {
+    "id": 118,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_queue_Flush_critical",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800d300",
+    "trap_address": "0x0800d310"
+  },
+  {
+    "id": 119,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_CPU_budget_consume_and_yield",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800d3c8",
+    "trap_address": "0x0800d3d2"
+  },
+  {
+    "id": 120,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_CPU_budget_set_to_ticks_per_timeslice",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x0800d40a",
+    "trap_address": "0x0800d414"
+  },
+  {
+    "id": 121,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_User_extensions_Add_set",
+    "subsystem": "USER_EXTENSIONS",
+    "check_address": "0x0800d49c",
+    "trap_address": "0x0800d4a6"
+  },
+  {
+    "id": 122,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Workspace_Free",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x0800d4da",
+    "trap_address": "0x0800d4e4"
+  },
+  {
+    "id": 123,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "stm32f4_gpio_set_config",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x0800e3cc",
+    "trap_address": "0x0800e3da"
+  },
+  {
+    "id": 124,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "stm32f4_gpio_set_config_array",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x0800e43a",
+    "trap_address": "0x0800e444"
+  },
+  {
+    "id": 125,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "rtems_fatal_source_text",
+    "subsystem": "USER_EXTENSIONS",
+    "check_address": "0x080110a0",
+    "trap_address": "0x080110aa"
+  },
+  {
+    "id": 126,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "rtems_configuration_get_stack_space_size",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x08011100",
+    "trap_address": "0x0801111e"
+  },
+  {
+    "id": 127,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_ISR_Is_in_progress",
+    "subsystem": "CORE_SYSTEM",
+    "check_address": "0x08011146",
+    "trap_address": "0x08011150"
+  },
+  {
+    "id": 128,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Semaphore_Post_binary",
+    "subsystem": "CLASSIC_API",
+    "check_address": "0x080111a8",
+    "trap_address": "0x080111b6"
+  },
+  {
+    "id": 129,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Thread_Get_name",
+    "subsystem": "THREAD_LIFECYCLE",
+    "check_address": "0x08011278",
+    "trap_address": "0x08011282"
+  },
+  {
+    "id": 130,
+    "type": "RASM",
+    "handler": "SigMismatch_Handler",
+    "function": "_Objects_Name_to_string",
+    "subsystem": "OBJECTS_MEMORY",
+    "check_address": "0x08012136",
+    "trap_address": "0x08012144"
+  }
+]

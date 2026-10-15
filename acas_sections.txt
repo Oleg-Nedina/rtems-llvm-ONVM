@@ -1,0 +1,42 @@
+/opt/rtems-llvm/src/rtems/build/arm/stm32f4/testsuites/benchmarks/bench_acas.exe  :
+section                 size        addr
+.start                   690   134217728
+.xbarrier                  0   536870912
+.text                  75698   134218432
+.init                     12   134294132
+.fini                     12   134294144
+.robarrier                 0   134294156
+.rodata                 8269   134294160
+.ARM.exidx                 8   134302432
+.eh_frame                  4   134302440
+.tbss                     24   134302444
+.init_array                4   134302444
+.fini_array                4   134302448
+.got                      16   134302452
+.rtemsroset              112   134302468
+.rwbarrier                 0   536870912
+.vector                  392   536870912
+.data                    844   536871304
+.bss                    5220   536872160
+.rtemsstack             4096   536877408
+.noinit                 1216   536881504
+.work                 119264   536882720
+.stack                     0   537001984
+.nocachenoload             0   537001984
+.comment                 112           0
+.debug_aranges          1528           0
+.debug_info           677158           0
+.debug_abbrev         108273           0
+.debug_line           276086           0
+.debug_frame           35252           0
+.debug_str             79208           0
+.debug_addr            15252           0
+.debug_line_str        14882           0
+.debug_loclists       183439           0
+.debug_rnglists        29622           0
+.debug_str_offsets    165676           0
+.ARM.attributes           59           0
+.debug_gdb_scripts       135           0
+Total                1802567
+
+

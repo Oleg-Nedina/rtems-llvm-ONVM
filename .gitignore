@@ -6,3 +6,8 @@ rtems/*
 # Fault Injection FI_Pipeline Environment
 tools/fi_pipeline/fi_env/
 tools/fi_pipeline/__pycache__/
+__pycache__/
+*.pyc
+guard_verifier/*.log
+guard_verifier/*_summary.json
+guard_verifier/*_data.csv
