@@ -1,67 +1,80 @@
-import os
 import sys
+import os
+import re
 
-def find_pair(base_dir):
-    f1 = None
-    f2 = None
-    for n in ("01_kernel_linked.ll", "01_raw.ll"):
-        p = os.path.join(base_dir, n)
-        if os.path.isfile(p):
-            f1 = p
-            break
-    for n in ("02_kernel_lower_switch.ll", "02_lower_switch.ll"):
-        p = os.path.join(base_dir, n)
-        if os.path.isfile(p):
-            f2 = p
-            break
-    if not f2:
-        sys.exit(f"File stadio 02 non trovato in {base_dir}")
-    return f1, f2
-
-def stats(path):
-    with open(path, "r", encoding="utf-8", errors="ignore") as f:
-        lines = f.readlines()
+def count_metrics(ll_path):
     switches = 0
     bbs = 0
-    icmps = 0
     node_blocks = 0
     leaf_blocks = 0
+    icmps = 0
+    lines = 0
+    re_bb = re.compile(r'^([a-zA-Z0-9_\.\-]+):\s*(;.*)?$')
+
     in_func = False
-    for line in lines:
-        s = line.strip()
-        if s.startswith("define "):
-            in_func = True
-        elif s == "}":
-            in_func = False
-        elif in_func:
-            if s.endswith(":") or "preds =" in s:
+    with open(ll_path, 'r', errors='replace') as f:
+        for line in f:
+            lines += 1
+            s = line.strip()
+            if not s:
+                continue
+            if s.startswith('define '):
+                in_func = True
                 bbs += 1
-                if s.startswith("NodeBlock"):
-                    node_blocks += 1
-                elif s.startswith("LeafBlock"):
-                    leaf_blocks += 1
-            elif s and not s.startswith(";"):
-                if s.startswith("switch ") or " switch " in s:
-                    switches += 1
-                if " = icmp " in s:
-                    icmps += 1
-    return len(lines), switches, bbs, icmps, node_blocks, leaf_blocks
+                continue
+            elif s == '}':
+                in_func = False
+                continue
 
-def main():
-    base_dir = sys.argv[1] if len(sys.argv) > 1 else "/tmp/aspis_monolithic/output"
-    f1, f2 = find_pair(base_dir)
-    l2, sw2, bb2, ic2, nb2, lb2 = stats(f2)
-    l1, sw1, bb1, ic1, _, _ = stats(f1) if f1 else (0, 0, 0, 0, 0, 0)
+            if in_func:
+                m_bb = re_bb.match(s)
+                if m_bb:
+                    bbs += 1
+                    bb_name = m_bb.group(1)
+                    if 'NodeBlock' in bb_name:
+                        node_blocks += 1
+                    elif 'LeafBlock' in bb_name:
+                        leaf_blocks += 1
+                elif not s.startswith(';') and not s.startswith(']'):
+                    if s.startswith('switch ') or ' switch ' in s:
+                        switches += 1
+                    if '= icmp ' in s:
+                        icmps += 1
+    return switches, bbs, node_blocks, leaf_blocks, icmps, lines
 
-    print("======================================================================")
-    print(f"[STADIO 02 - LOWER-SWITCH] File: {f2}")
-    print("======================================================================")
-    print(f"  Istruzioni 'switch' residue : {sw2} (Stadio 01: {sw1}) -> {'OK (0 switch)' if sw2 == 0 else 'ATTENZIONE!'}")
-    print(f"  Basic Blocks totali         : {bb2} (Delta rispetto a Stadio 01: {bb2 - bb1:+d})")
-    print(f"  Blocchi albero decisionale  : NodeBlock={nb2}, LeafBlock={lb2}")
-    print(f"  Istruzioni 'icmp' totali    : {ic2} (Delta rispetto a Stadio 01: {ic2 - ic1:+d})")
-    print(f"  Righe IR totali             : {l2} (Delta: {l2 - l1:+d})")
+def analyze_lower_switch(ll_path, prev_ll_path=None):
+    if not os.path.exists(ll_path):
+        print(f"[ERRORE] File non trovato: {ll_path}")
+        sys.exit(1)
+
+    sw, bbs, nb, lb, icmps, lines = count_metrics(ll_path)
+    prev_sw_str = ""
+    delta_bb_str = ""
+    delta_icmp_str = ""
+    delta_lines_str = ""
+
+    if prev_ll_path and os.path.exists(prev_ll_path):
+        p_sw, p_bbs, _, _, p_icmps, p_lines = count_metrics(prev_ll_path)
+        prev_sw_str = f" (Stadio 01: {p_sw})"
+        delta_bb_str = f" (Delta rispetto a Stadio 01: {bbs - p_bbs:+d})"
+        delta_icmp_str = f" (Delta rispetto a Stadio 01: {icmps - p_icmps:+d})"
+        delta_lines_str = f" (Delta: {lines - p_lines:+d})"
+
+    status = "OK (0 switch)" if sw == 0 else f"ATTENZIONE ({sw} switch ancora presenti)"
+
+    print("=" * 70)
+    print(f"[STADIO 02 - LOWER-SWITCH] File: {ll_path}")
+    print("=" * 70)
+    print(f"  Istruzioni 'switch' residue : {sw}{prev_sw_str} -> {status}")
+    print(f"  Basic Blocks totali         : {bbs}{delta_bb_str}")
+    print(f"  Blocchi albero decisionale  : NodeBlock={nb}, LeafBlock={lb}")
+    print(f"  Istruzioni 'icmp' totali    : {icmps}{delta_icmp_str}")
+    print(f"  Righe IR totali             : {lines}{delta_lines_str}")
     print()
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print("Uso: analyze_02_lower_switch.py <02_lower_switch.ll> [01_raw.ll]")
+        sys.exit(1)
+    prev = sys.argv[2] if len(sys.argv) > 2 else None
+    analyze_lower_switch(sys.argv[1], prev)

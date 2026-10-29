@@ -1,69 +1,75 @@
-import os
 import sys
+import os
+import re
 
-def find_pair(base_dir):
-    f5 = None
-    f6 = None
-    for n in ("05_kernel_simplifycfg.ll", "05_simplifycfg.ll", "03_simplifycfg.ll"):
-        p = os.path.join(base_dir, n)
-        if os.path.isfile(p):
-            f5 = p
-            break
-    for n in ("06_kernel_rasm.ll", "06_rasm_verify.ll", "04_rasm_verify.ll"):
-        p = os.path.join(base_dir, n)
-        if os.path.isfile(p):
-            f6 = p
-            break
-    if not f6:
-        sys.exit(f"File stadio 06 non trovato in {base_dir}")
-    return f5, f6
+def analyze_rasm(ll_path, prev_ll_path=None):
+    if not os.path.exists(ll_path):
+        print(f"[ERRORE] File non trovato: {ll_path}")
+        sys.exit(1)
 
-def stats(path):
-    with open(path, "r", encoding="utf-8", errors="ignore") as f:
-        lines = f.readlines()
-    rasm_bbs = 0
-    rasm_ret_bbs = 0
     sig_calls = 0
-    dc_calls = 0
-    insts = 0
+    datacorruption_calls = 0
+    bbs = 0
+    instructions = 0
+    lines = 0
+    defined_funcs = 0
+    re_bb = re.compile(r'^[a-zA-Z0-9_\.\-]+:\s*(;.*)?$')
+
     in_func = False
-    for line in lines:
-        s = line.strip()
-        if s.startswith("define "):
-            in_func = True
-        elif s == "}":
-            in_func = False
-        elif in_func:
-            if s.endswith(":") or "preds =" in s:
-                if "RASM_ret_Verification_BB" in s:
-                    rasm_ret_bbs += 1
-                elif "RASM_Verification_BB" in s:
-                    rasm_bbs += 1
-            elif s and not s.startswith(";"):
-                insts += 1
-                if "call " in s and "@SigMismatch_Handler" in s:
-                    sig_calls += 1
-                if "call " in s and "@DataCorruption_Handler" in s:
-                    dc_calls += 1
-    return len(lines), rasm_bbs, rasm_ret_bbs, sig_calls, dc_calls, insts
+    with open(ll_path, 'r', errors='replace') as f:
+        for line in f:
+            lines += 1
+            s = line.strip()
+            if not s:
+                continue
+            if s.startswith('define '):
+                in_func = True
+                defined_funcs += 1
+                bbs += 1
+                continue
+            elif s == '}':
+                in_func = False
+                continue
 
-def main():
-    base_dir = sys.argv[1] if len(sys.argv) > 1 else "/tmp/aspis_monolithic/output"
-    f5, f6 = find_pair(base_dir)
-    l6, rb6, rrb6, sc6, dc6, i6 = stats(f6)
-    l5, _, _, _, _, i5 = stats(f5) if f5 else (0, 0, 0, 0, 0, 0)
+            if in_func:
+                if re_bb.match(s):
+                    bbs += 1
+                elif not s.startswith(';') and not s.startswith(']'):
+                    instructions += 1
+                    if '@SigMismatch_Handler' in s and ('call ' in s or 'invoke ' in s):
+                        sig_calls += 1
+                    elif '@DataCorruption_Handler' in s and ('call ' in s or 'invoke ' in s):
+                        datacorruption_calls += 1
 
-    print("======================================================================")
-    print(f"[STADIO 06 - RASM VERIFY (CFI)] File: {f6}")
-    print("======================================================================")
-    print(f"  Blocchi RASM_Verification_BB    : {rb6}")
-    print(f"  Blocchi RASM_ret_Verification_BB: {rrb6}")
-    print(f"  Check SigMismatch_Handler (RASM): {sc6}")
-    print(f"  Check DataCorruption (EDDI)     : {dc6}")
-    print(f"  Totale Guardie Combinate        : {sc6 + dc6}")
-    print(f"  Istruzioni IR totali            : {i6} (Delta RASM: {i6 - i5:+d})")
-    print(f"  Righe IR totali                 : {l6} (Delta: {l6 - l5:+d})")
+    prev_inst = 0
+    if prev_ll_path and os.path.exists(prev_ll_path):
+        in_f = False
+        with open(prev_ll_path, 'r', errors='replace') as pf:
+            for line in pf:
+                s = line.strip()
+                if s.startswith('define '):
+                    in_f = True
+                elif s == '}':
+                    in_f = False
+                elif in_f and s and not re_bb.match(s) and not s.startswith(';') and not s.startswith(']'):
+                    prev_inst += 1
+
+    cov_pct = (sig_calls / defined_funcs * 100.0) if defined_funcs > 0 else 0.0
+
+    print("=" * 70)
+    print(f"[STADIO 06 - RASM VERIFY] File: {ll_path}")
+    print("=" * 70)
+    print(f"  Check SigMismatch_Handler   : {sig_calls} ({sig_calls}/{defined_funcs} funzioni protette = {cov_pct:.1f}%)")
+    print(f"  Check DataCorruption_Handler: {datacorruption_calls}")
+    print(f"  Totale guardie attive       : {sig_calls + datacorruption_calls} (EDDI + RASM)")
+    print(f"  Basic Blocks totali         : {bbs}")
+    print(f"  Istruzioni IR totali        : {instructions}" + (f" (Overhead RASM: +{instructions - prev_inst} istruzioni)" if prev_inst else ""))
+    print(f"  Righe IR totali             : {lines}")
     print()
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print("Uso: analyze_06_rasm.py <06_rasm_verify.ll> [05_simplifycfg.ll]")
+        sys.exit(1)
+    prev = sys.argv[2] if len(sys.argv) > 2 else None
+    analyze_rasm(sys.argv[1], prev)

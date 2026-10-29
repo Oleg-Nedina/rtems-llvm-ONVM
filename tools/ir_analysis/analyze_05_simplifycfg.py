@@ -1,60 +1,84 @@
-import os
 import sys
+import os
+import re
 
-def find_pair(base_dir):
-    f4 = None
-    f5 = None
-    for n in ("04_kernel_eddi.ll", "04_eddi_verify.ll"):
-        p = os.path.join(base_dir, n)
-        if os.path.isfile(p):
-            f4 = p
-            break
-    for n in ("05_kernel_simplifycfg.ll", "05_simplifycfg.ll", "03_simplifycfg.ll"):
-        p = os.path.join(base_dir, n)
-        if os.path.isfile(p):
-            f5 = p
-            break
-    if not f5:
-        sys.exit(f"File stadio 05 non trovato in {base_dir}")
-    return f4, f5
-
-def stats(path):
-    with open(path, "r", encoding="utf-8", errors="ignore") as f:
-        lines = f.readlines()
-    switches = 0
+def count_cfg(ll_path):
     bbs = 0
-    dc_calls = 0
+    verif_bbs = 0
+    err_bbs = 0
+    switches = 0
+    phis = 0
+    selects = 0
+    datacorruption_calls = 0
+    lines = 0
+    re_bb = re.compile(r'^([a-zA-Z0-9_\.\-]+):\s*(;.*)?$')
+
     in_func = False
-    for line in lines:
-        s = line.strip()
-        if s.startswith("define "):
-            in_func = True
-        elif s == "}":
-            in_func = False
-        elif in_func:
-            if s.endswith(":") or "preds =" in s:
+    with open(ll_path, 'r', errors='replace') as f:
+        for line in f:
+            lines += 1
+            s = line.strip()
+            if not s:
+                continue
+            if s.startswith('define '):
+                in_func = True
                 bbs += 1
-            elif s and not s.startswith(";"):
-                if s.startswith("switch ") or " switch " in s:
-                    switches += 1
-                if "call " in s and "@DataCorruption_Handler" in s:
-                    dc_calls += 1
-    return len(lines), switches, bbs, dc_calls
+                continue
+            elif s == '}':
+                in_func = False
+                continue
 
-def main():
-    base_dir = sys.argv[1] if len(sys.argv) > 1 else "/tmp/aspis_monolithic/output"
-    f4, f5 = find_pair(base_dir)
-    l5, sw5, bb5, dc5 = stats(f5)
-    l4, sw4, bb4, dc4 = stats(f4) if f4 else (0, 0, 0, 0)
+            if in_func:
+                m_bb = re_bb.match(s)
+                if m_bb:
+                    bbs += 1
+                    bname = m_bb.group(1)
+                    if 'VerificationBB' in bname:
+                        verif_bbs += 1
+                    elif 'ErrBB' in bname:
+                        err_bbs += 1
+                elif not s.startswith(';') and not s.startswith(']'):
+                    if s.startswith('switch ') or ' switch ' in s:
+                        switches += 1
+                    if '= phi ' in s:
+                        phis += 1
+                    if '= select ' in s:
+                        selects += 1
+                    if '@DataCorruption_Handler' in s and ('call ' in s or 'invoke ' in s):
+                        datacorruption_calls += 1
+    return bbs, verif_bbs, err_bbs, switches, phis, selects, datacorruption_calls, lines
 
-    print("======================================================================")
-    print(f"[STADIO 05 - SIMPLIFYCFG + LOWER-SWITCH] File: {f5}")
-    print("======================================================================")
-    print(f"  Istruzioni 'switch' residue : {sw5} -> {'OK (Pronto per RASM)' if sw5 == 0 else 'ERRORE: switch presente!'}")
-    print(f"  Basic Blocks dopo pulizia   : {bb5} (Stadio 04: {bb4}, Riduzione: {bb5 - bb4:+d})")
-    print(f"  Check DataCorruption_Handler: {dc5} (Stadio 04: {dc4})")
-    print(f"  Righe IR totali             : {l5} (Delta: {l5 - l4:+d})")
+def analyze_simplifycfg(ll_path, prev_ll_path=None):
+    if not os.path.exists(ll_path):
+        print(f"[ERRORE] File non trovato: {ll_path}")
+        sys.exit(1)
+
+    bbs, v_bbs, e_bbs, sw, phis, selects, dc_calls, lines = count_cfg(ll_path)
+
+    delta_bb = ""
+    delta_vbb = ""
+    delta_dc = ""
+    if prev_ll_path and os.path.exists(prev_ll_path):
+        p_bbs, p_vbbs, _, _, _, _, p_dc, _ = count_cfg(prev_ll_path)
+        pct = ((bbs - p_bbs) / p_bbs * 100.0) if p_bbs else 0.0
+        delta_bb = f" (Stadio 04: {p_bbs}, Riduzione: {bbs - p_bbs:+d} BB [{pct:.1f}%])"
+        delta_vbb = f" (Stadio 04: {p_vbbs}, Fusi: {v_bbs - p_vbbs:+d})"
+        delta_dc = f" (Stadio 04: {p_dc}, Preservati: {dc_calls}/{p_dc})"
+
+    print("=" * 70)
+    print(f"[STADIO 05 - SIMPLIFYCFG + LOWER-SWITCH] File: {ll_path}")
+    print("=" * 70)
+    print(f"  Basic Blocks totali         : {bbs}{delta_bb}")
+    print(f"  Blocchi VerificationBB      : {v_bbs}{delta_vbb}")
+    print(f"  Check DataCorruption_Handler: {dc_calls}{delta_dc}")
+    print(f"  Istruzioni 'switch' residue : {sw} -> {'OK (0 switch)' if sw == 0 else 'ERRORE'}")
+    print(f"  Istruzioni 'phi' / 'select' : phi={phis}, select={selects}")
+    print(f"  Righe IR totali             : {lines}")
     print()
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print("Uso: analyze_05_simplifycfg.py <05_simplifycfg.ll> [04_eddi_verify.ll]")
+        sys.exit(1)
+    prev = sys.argv[2] if len(sys.argv) > 2 else None
+    analyze_simplifycfg(sys.argv[1], prev)
